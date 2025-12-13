@@ -1,1 +1,35 @@
+.about-us-title {
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  text-align: center;
 
+  padding: 64px 20px 40px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us-title {
+    padding: 64px 32px 40px 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about-us-title {
+    padding: 80px 272px 40px 272px;
+  }
+}
+
+/* .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+} */
