@@ -18,42 +18,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json();
     const feedbacks = data.feedbacks;
 
-    // Додаємо клас swiper-slide до кожного <li>
     const items = feedbacks
-      .map(
-        item => `
-      <li class="swiper-slide">
-        <p class="swiper-slide-feedbacks">${item.description}</p>
-        <p class="swiper-slide-author">${item.author}</p>
-      </li>
-    `
-      )
+      .map(item => {
+        const rating = parseFloat(item.rating) || 0; // поле з бекенду, наприклад 4.5
+        const starPercentage = (rating / 5) * 100;
+
+        return `
+        <li class="swiper-slide">
+          <div class="star-rating" data-rating="${rating}">
+            <div class="stars-outer">
+              <div class="stars-inner" style="width: ${starPercentage}%"></div>
+            </div>
+          </div>
+
+          <p class="swiper-slide-feedbacks">${item.description}</p>
+          <p class="swiper-slide-author">${item.author}</p>
+        </li>
+      `;
+      })
       .join('');
 
     list.innerHTML = items;
 
-    // Ініціалізуємо Swiper після вставки контенту
+    // Ініціалізуємо Swiper
     new Swiper('.success-content', {
-      slidesPerView: 1, // По 1 слайду на екрані (картка)
-      spaceBetween: 20, // Відстань між слайдами
-      loop: true, // Зациклений слайдер
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
       pagination: {
-        el: '.swiper-pagination', // Пагинація (крапки)
+        el: '.swiper-pagination',
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next', // Кнопка вперед
-        prevEl: '.swiper-button-prev', // Кнопка назад
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        // Адаптив: на десктопі показувати більше слайдів, якщо хочеш
         768: { slidesPerView: 2 },
         1440: { slidesPerView: 3 },
       },
     });
   } catch (error) {
     console.error('Помилка запиту:', error);
-    list.innerHTML =
-      '<li>Не вдалося завантажити відгуки. Перевірте консоль.</li>';
+    list.innerHTML = '<li>Не вдалося завантажити відгуки.</li>';
   }
 });

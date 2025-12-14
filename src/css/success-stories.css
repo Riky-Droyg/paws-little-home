@@ -79,3 +79,35 @@
     font-size: 18px;
   }
 }
+
+.star-rating {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 24px;
+  color: #e0e0e0; /* колір порожніх зірок */
+}
+
+.stars-outer::before {
+  content: '\f005 \f005 \f005 \f005 \f005'; /* 5 порожніх зірок */
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; /* перезаписується inline style з JS */
+  color: #ffd700; /* золотий колір заповнених зірок */
+}
+
+.stars-inner::before {
+  content: '\f005 \f005 \f005 \f005 \f005'; /* 5 повних зірок */
+}
