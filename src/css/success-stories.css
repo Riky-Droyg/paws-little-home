@@ -1,1 +1,65 @@
+.success-stories {
+  background-color: antiquewhite;
 
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.success-title {
+  background-color: rgb(148, 211, 190);
+}
+
+.success-content {
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+}
+
+.success-swiper {
+  background-color: rgb(255, 255, 255);
+  height: 50px;
+}
+
+.success-h2 {
+  font-weight: 700;
+  font-size: 36px;
+
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+
+  margin-bottom: 24px;
+}
+
+.success-p {
+  font-weight: 400;
+  font-size: 16px;
+
+  /* line-height: 24px; */
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* з 375px макет стає адаптивним */
+@media (min-width: 375px) {
+}
+
+/* tablet */
+@media (min-width: 768px) {
+}
+
+/* desktop */
+@media (min-width: 1440px) {
+  .success-title {
+    max-width: 700px; /* для відображування заголовку */
+    margin-inline: auto;
+  }
+
+  .success-h2 {
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  .success-p {
+    font-size: 18px;
+  }
+}
