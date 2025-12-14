@@ -3,6 +3,8 @@ import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import path from 'path';
 
 export default defineConfig(({ command }) => {
   return {
@@ -38,6 +40,13 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
     },
     plugins: [
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(process.cwd(), 'src/img/SVG-sprite')],
+        symbolId: 'icon-[name]',
+        inject: 'body-last',
+        customDomId: '__svg__icons__dom__',
+        // svgoOptions: true, // дефолт: true (стискає SVG)
+      }),
       injectHTML(),
       FullReload(['./src/**/**.html']),
       SortCss({

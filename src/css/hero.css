@@ -3,8 +3,8 @@
   min-height: 544px;
 
   background-image: image-set(
-    url('../img/hero/webp/hero-mobile@1x.webp') 1x,
-    url('../img/hero/webp/hero-mobile@2x.webp') 2x
+    url('../img/hero/hero-mobile@1x.webp') 1x,
+    url('../img/hero/hero-mobile@2x.webp') 2x
   );
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,8 +93,8 @@
 @media (min-width: 768px) {
   .hero-section {
     background-image: image-set(
-      url('../img/hero/webp/hero-tablet@1x.webp') 1x,
-      url('../img/hero/webp/hero-tablet@2x.webp') 2x
+      url('../img/hero/hero-tablet@1x.webp') 1x,
+      url('../img/hero/hero-tablet@2x.webp') 2x
     );
     background-position: center;
   }
@@ -114,8 +114,8 @@
   .hero-section {
     min-height: 900px;
     background-image: image-set(
-      url('../img/hero/webp/hero-desktop@1x.webp') 1x,
-      url('../img/hero/webp/hero-desktop@2x.webp') 2x
+      url('../img/hero/hero-desktop@1x.webp') 1x,
+      url('../img/hero/hero-desktop@2x.webp') 2x
     );
   }
 
