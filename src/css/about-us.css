@@ -32,14 +32,38 @@
   position: relative;
 }
 
+.swiper-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(0, 0, 0, 0.6) 63%
+  );
+}
+
+.swiper-slide picture,
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .slide-text {
   position: absolute;
+  z-index: 2;
+
   top: 238px;
   left: 20px;
   bottom: 20px;
   right: 20px;
+
   width: 295px;
   height: 144px;
+
   color: #f6f4f1;
   font-size: 16px;
   line-height: 1.2;
@@ -48,14 +72,23 @@
 
 @media screen and (min-width: 768px) {
   .slide-text {
-    font-size: 20px;
-    top: 200px;
+    top: 300.05px;
+    left: 32px;
+    bottom: 32px;
+
+    width: 548px;
+    height: 96px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .slide-text {
-    font-size: 22px;
-    top: 250px;
+    font-size: 18px;
+
+    top: 581px;
+    left: 64px;
+
+    width: 548px;
+    height: 108px;
   }
 }
