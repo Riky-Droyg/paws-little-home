@@ -1,6 +1,5 @@
 .hero-section {
   position: relative;
-
   min-height: 544px;
 
   background-image: image-set(
@@ -17,7 +16,6 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.55) 0%,
@@ -25,28 +23,32 @@
     rgba(0, 0, 0, 0.12) 100%
   );
 }
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 64px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .hero-header {
   margin: 0 0 24px;
-
-  max-width: 320px; /* контроль переносу рядків */
+  max-width: 320px;
 
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 1.2;
   letter-spacing: -0.01em;
-
-  color: #ffffff;
+  color: #fff;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding-top: 64px;
-}
 .hero-text {
   margin: 0 0 24px;
-
   max-width: 335px;
 
   font-family: 'IBM Plex Sans', sans-serif;
@@ -54,9 +56,9 @@
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0;
-
-  color: #ffffff;
+  color: #fff;
 }
+
 .hero-btn-link {
   display: inline-flex;
   align-items: center;
@@ -75,63 +77,61 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
-  color: #ffffff;
+  color: #fff;
 
   text-decoration: none;
   cursor: pointer;
 }
+
 .hero-btn-link:hover,
 .hero-btn-link:focus-visible {
   background: #c3b49d;
   border-color: #02060a;
 }
 
+/* tablet */
 @media (min-width: 768px) {
   .hero-section {
-    min-height: 600px;
     background-image: image-set(
       url('../img/hero/webp/hero-tablet@1x.webp') 1x,
       url('../img/hero/webp/hero-tablet@2x.webp') 2x
     );
     background-position: center;
   }
-  .hero-content {
-    padding-top: 64px;
-  }
 
   .hero-header {
     max-width: 622px;
     font-size: 40px;
-    line-height: 1.2;
   }
+
   .hero-text {
-    width: 500px;
-    max-width: 512px;
+    max-width: 500px;
   }
 }
 
+/* desktop */
 @media (min-width: 1440px) {
   .hero-section {
-    min-height: 720px;
+    min-height: 900px;
     background-image: image-set(
       url('../img/hero/webp/hero-desktop@1x.webp') 1x,
       url('../img/hero/webp/hero-desktop@2x.webp') 2x
     );
   }
 
-  .hero-content {
+  .hero-container {
     padding-top: 128px;
   }
+
   .hero-header {
     max-width: 622px;
     font-size: 56px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    font-weight: 700;
   }
+
   .hero-text {
     font-size: 18px;
   }
+
   .hero-btn-link {
     width: 189px;
     height: 48px;
