@@ -1,1 +1,118 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.25);;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms ease-in-out,
+    visibility 250ms ease-in-out;
+}
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -100%);
+}
+.modal {
+  position: relative;
+  border-radius: 8px;
+  padding: 64px 20px;
+  min-height: auto;
+  overflow: scroll;
+  background-color: #f6f4f1;
+  transition: transform 250ms ease-in-out;
+}
+.modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  border-radius: 0;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
 
+.modal__close-icon {
+  fill: #02060A;
+}
+ .modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+ }
+ .modal__animal-description {
+    display: flex;
+    flex-direction: column;
+ }
+ .modal__specie {
+    text-align: left;
+    font-size: 12px;
+line-height: 1.5;
+color: #02060a;
+margin-bottom: 8px;
+ }
+ .modal__name {
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    font-size: 32px; 
+line-height: 1.2;
+letter-spacing: -0.01em;
+color: #02060a;
+margin-bottom: 8px;
+ }
+ .modal__info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+ }
+ .modal__age,
+ .modal__gender {
+    text-align: left;
+    font-size: 12px;
+line-height: 1.5;
+color: #02060a;
+ }
+ .modal__heading {
+    font-weight: 600;
+font-size: 14px;
+line-height: 1.5;
+color: #02060a;
+margin-bottom: 8px;
+ }
+ .modal__details,
+ .modal__health-descr,
+ .modal__behavior {
+font-size: 14px;
+line-height: 1.5;
+color: #02060a;
+margin-bottom: 24px;
+ }
+ .modal__btn {
+    display: block;
+    margin-top: auto;
+ border: 1px solid #88765c;
+border-radius: 8px;
+padding: 12px 24px;
+height: 45px;
+background-color: #88765c;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.5;
+color: #fff;
+ }
