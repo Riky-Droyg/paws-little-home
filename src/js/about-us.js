@@ -78,8 +78,17 @@ swiperSlides.forEach((slide, index) => {
 });
 
 const aboutSwiper = new Swiper('.about-swiper', {
-  // configure Swiper to use modules
-  modules: [Navigation, Pagination],
+  direction: 'horizontal',
+  loop: false,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
 const btnPrev = document.querySelector('.swiper-button-prev img');
