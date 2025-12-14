@@ -1,4 +1,4 @@
-import 'virtual:svg-icons-register';
+
 import '/js/header.js';
 import '/js/hero.js';
 import '/js/pets-list.js';
