@@ -14,4 +14,7 @@ const BREAKPOINTS = {
   tablet: 768,
   mobile: 375,
 };
+
 /* #endregion */
+
+document.addEventListener('DOMContentLoaded', initHomepage);
