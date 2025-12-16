@@ -102,10 +102,7 @@
 /* #endregion */
 
 /* #region success-swiper*/
-.success-swiper {
-  background-color: rgb(139, 104, 104);
-  height: 50px;
-}
+
 /* #endregion */
 
 /* з 375px макет стає адаптивним */
@@ -131,4 +128,75 @@
   .p {
     font-size: 18px;
   }
+}
+
+/* Контейнер — flex, все по центру в один рядок */
+.success-swiper {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center; /* горизонтально по центру */
+  align-items: center; /* вертикально по центру */
+  gap: 40px; /* відстань між стрілками і пагинацією */
+  margin-top: 40px; /* відступ від слайдера зверху */
+  padding: 20px 0;
+
+  height: 48px;
+}
+
+.success-swiper-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* Стилі для кастомних кнопок */
+.custom-swiper-prev,
+.custom-swiper-next {
+  width: 48px;
+  height: 48px;
+  background-color: rgb(238, 233, 227);
+  border: 1px solid rgb(195, 180, 157);
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-swiper-prev:hover,
+.custom-swiper-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Примусово тримаємо пагинацію там, де вона в HTML — всередині .success-swiper */
+.success-content .swiper-pagination {
+  position: static !important; /* найголовніше — знімаємо absolute */
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px; /* відстань між точками */
+}
+
+/* Стилі самих точок — робимо їх гарнішими */
+.success-content .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: rgba(255, 255, 255, 0.6) !important; /* напівпрозорі білі */
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+  margin: 0 !important; /* на випадок, якщо Swiper додає margin */
+}
+
+.success-content .swiper-pagination-bullet-active {
+  background-color: white !important; /* активна — повністю біла */
+  transform: scale(1.3) !important;
 }
