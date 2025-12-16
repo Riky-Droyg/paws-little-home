@@ -34,11 +34,10 @@ async function fetchFeedbacks() {
 function renderFeedbacks(list, feedbacks) {
   const items = feedbacks
     .map(item => {
-      // Переконуємося, що рейтинг - це число (напр. 4.5)
-      const rating = parseFloat(item.rating);
+      const rating = parseFloat(item.rate);
       return `
         <li class="swiper-slide">
-          <div class="star-rating-container" data-score="${rating}"></div>
+          <div class="star-rating-container" data-score="${item.rate}"></div>
           <p class="swiper-slide-feedbacks">${item.description}</p>
           <p class="swiper-slide-author">${item.author}</p>
         </li>
@@ -48,27 +47,21 @@ function renderFeedbacks(list, feedbacks) {
 
   list.innerHTML = items;
 
-  // Тільки ТУТ запускаємо зірки
   initRatyStars();
 }
 
 function initRatyStars() {
   $('.star-rating-container').each(function () {
-    const score = $(this).data('score');
+    const score = parseFloat($(this).attr('data-score'));
 
     $(this).raty({
       readOnly: true,
       halfShow: true,
       score: score,
-      number: 5, // Явно вказуємо 5 зірок
-      starType: 'img',
-      // Використовуємо стабільні прямі посилання на активи
-      starOn:
-        'https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/images/star-on.png',
-      starOff:
-        'https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/images/star-off.png',
-      starHalf:
-        'https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/images/star-half.png',
+      starType: 'i', // Кажемо Raty використовувати теги <i>
+      starOn: 'fa-solid fa-star', // Повна зірка
+      starOff: 'fa-regular fa-star', // Порожня зірка
+      starHalf: 'fa-solid fa-star-half-stroke', // Половинка
     });
   });
 }
