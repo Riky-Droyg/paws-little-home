@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     const response = await fetch(
-      'https://paw-hut.b.goit.study/api/feedbacks?limit=10'
+      'https://paw-hut.b.goit.study/api/feedbacks?limit=5'
     );
 
     if (!response.ok) {
