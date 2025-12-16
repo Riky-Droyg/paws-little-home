@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 document.addEventListener('DOMContentLoaded', async () => {
   const list = document.querySelector('.feedbacks-list');
   if (!list) return;
@@ -18,16 +20,14 @@ document.addEventListener('DOMContentLoaded', async () => {
    SERVER
 ======================= */
 async function fetchFeedbacks() {
-  const response = await fetch(
-    'https://paw-hut.b.goit.study/api/feedbacks?limit=5'
+  const response = await axios.get(
+    'https://paw-hut.b.goit.study/api/feedbacks',
+    {
+      params: { limit: 5 },
+    }
   );
 
-  if (!response.ok) {
-    throw new Error(`Помилка: ${response.status}`);
-  }
-
-  const data = await response.json();
-  return data.feedbacks;
+  return response.data.feedbacks;
 }
 
 /* =======================
@@ -57,9 +57,7 @@ function renderFeedbacks(list, feedbacks) {
   list.innerHTML = items;
 }
 
-/* =======================
-   SWIPER
-======================= */
+//#region swiper
 function initSwiper() {
   return new Swiper('.success-content', {
     slidesPerView: 1,
@@ -75,10 +73,9 @@ function initSwiper() {
     },
   });
 }
+//#endregion
 
-/* =======================
-   BUTTONS
-======================= */
+//#region buttons
 function initSwiperButtons(swiperInstance) {
   const prevButton = document.querySelector('.custom-swiper-prev');
   const nextButton = document.querySelector('.custom-swiper-next');
@@ -95,3 +92,4 @@ function initSwiperButtons(swiperInstance) {
     });
   }
 }
+//#endregion
