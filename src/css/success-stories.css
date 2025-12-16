@@ -1,5 +1,5 @@
 .success-stories {
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
 
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
 
 /* #region success-content*/
 .swiper {
-  background-color: rgb(206, 193, 56);
+  background-color: rgb(255, 255, 255);
   width: 100%;
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   gap: 4px; /* Відстань між зірочками */
 
-  background-color: #b67373;
+  background-color: #ffffff;
 }
 
 /* Вирівнювання зображень всередині Raty */
@@ -78,7 +78,7 @@
 /* #region success-swiper*/
 /* Контейнер — flex, все по центру в один рядок */
 .success-swiper {
-  background-color: rgb(150, 113, 113);
+  background-color: rgb(255, 255, 255);
   display: flex;
 
   align-items: center; /* вертикально по центру */
