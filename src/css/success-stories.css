@@ -8,7 +8,7 @@
 
 /* #region success-title*/
 .success-title {
-  background-color: rgb(148, 211, 190);
+  background-color: rgb(255, 255, 255);
 }
 
 .h2 {
@@ -32,60 +32,38 @@
 }
 /* #endregion */
 
+/* #region success-content*/
 .swiper {
-  background-color: rgb(241, 241, 241);
-
+  background-color: rgb(206, 193, 56);
   width: 100%;
-  height: 200px;
-}
-
-.swiper-slide-feedbacks {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: blue;
-}
-
-.swiper-slide-author {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgb(190, 28, 50);
-}
-
-.success-swiper {
-  background-color: rgb(139, 104, 104);
-  height: 50px;
-}
-
-/* з 375px макет стає адаптивним */
-@media (min-width: 375px) {
-}
-
-/* tablet */
-@media (min-width: 768px) {
-}
-
-/* desktop */
-@media (min-width: 1440px) {
-  .success-title {
-    max-width: 700px; /* для відображування заголовку */
-    margin-inline: auto;
-  }
-
-  .success-h2 {
-    font-weight: 700;
-    font-size: 48px;
-  }
-
-  .success-p {
-    font-size: 18px;
-  }
 }
 
 .star-rating {
-  margin-bottom: 16px;
-  text-align: center;
+  background-color: #9e935e;
+
+  margin-bottom: 32px;
+}
+
+.swiper-slide-feedbacks {
+  margin-bottom: 32px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+
+  color: #91ac1b;
+  background-color: #8b8a81;
+
+  height: 150px;
+}
+
+.swiper-slide-author {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: #b8642d;
+  background-color: #63625f;
 }
 
 .stars-outer {
@@ -113,4 +91,37 @@
 
 .stars-inner::before {
   content: '\f005 \f005 \f005 \f005 \f005'; /* 5 повних зірок */
+}
+/* #endregion */
+
+/* #region success-swiper*/
+.success-swiper {
+  background-color: rgb(139, 104, 104);
+  height: 50px;
+}
+/* #endregion */
+
+/* з 375px макет стає адаптивним */
+@media (min-width: 375px) {
+}
+
+/* tablet */
+@media (min-width: 768px) {
+}
+
+/* desktop */
+@media (min-width: 1440px) {
+  .success-title {
+    max-width: 700px; /* для відображування заголовку */
+    margin-inline: auto;
+  }
+
+  .h2 {
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  .p {
+    font-size: 18px;
+  }
 }

@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Ініціалізуємо Swiper
     new Swiper('.success-content', {
       slidesPerView: 1,
-      spaceBetween: 20,
+      spaceBetween: 32,
       loop: true,
       pagination: {
         el: '.swiper-pagination',
