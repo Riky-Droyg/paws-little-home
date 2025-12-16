@@ -137,6 +137,15 @@
   transition: all 0.3s ease;
 }
 
+/* disabled стан */
+.custom-swiper-prev.is-disabled,
+.custom-swiper-next.is-disabled {
+  border: none;
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none; /* Вимикаємо кліки на рівні CSS */
+}
+
 .custom-swiper-prev:hover,
 .custom-swiper-next:hover {
   border: 1px solid rgba(2, 6, 10, 0.6);

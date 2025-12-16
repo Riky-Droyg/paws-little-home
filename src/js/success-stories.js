@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initSwiperButtons(swiperInstance);
   } catch (error) {
     console.error('Помилка запиту:', error);
-    list.innerHTML = '<li>Не вдалося завантажити відгуки.</li>';
+    list.innerHTML = '<li>Недоступні данні</li>';
   }
 });
 
