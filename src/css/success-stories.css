@@ -41,12 +41,11 @@
 .star-rating-container {
   margin-bottom: 32px;
   display: flex;
-  gap: 4px; /* Відстань між зірочками */
+  gap: 4px;
 
   background-color: #ffffff;
 }
 
-/* Вирівнювання зображень всередині Raty */
 .star-rating-container img {
   width: 20px;
   height: 20px;
@@ -76,17 +75,11 @@
 /* #endregion */
 
 /* #region success-swiper*/
-/* Контейнер — flex, все по центру в один рядок */
+
 .success-swiper {
   background-color: rgb(255, 255, 255);
   display: flex;
-
-  align-items: center; /* вертикально по центру */
-  gap: 100px; /* відстань між стрілками і пагинацією */
-
-  padding: 20px 0;
-
-  height: 48px;
+  align-items: center;
 }
 
 .success-swiper-buttons {
@@ -95,7 +88,7 @@
   gap: 16px;
 }
 
-/* Стилі для кастомних кнопок */
+/* кастомні кнопки */
 .custom-swiper-prev,
 .custom-swiper-next {
   width: 48px;

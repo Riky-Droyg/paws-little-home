@@ -58,10 +58,10 @@ function initRatyStars() {
       readOnly: true,
       halfShow: true,
       score: score,
-      starType: 'i', // Кажемо Raty використовувати теги <i>
-      starOn: 'fa-solid fa-star', // Повна зірка
-      starOff: 'fa-regular fa-star', // Порожня зірка
-      starHalf: 'fa-solid fa-star-half-stroke', // Половинка
+      starType: 'i', // використовувати теги <i>
+      starOn: 'fa-solid fa-star', // повна зірка
+      starOff: 'fa-regular fa-star', // порожня зірка
+      starHalf: 'fa-solid fa-star-half-stroke', // половинка
     });
   });
 }
@@ -79,7 +79,7 @@ function initSwiper() {
     },
     breakpoints: {
       768: { slidesPerView: 2 },
-      1440: { slidesPerView: 2 }, //не міняємо
+      1440: { slidesPerView: 2 },
     },
   });
 }
@@ -100,10 +100,11 @@ function initSwiperButtons(swiperInstance) {
     nextButton.classList.toggle('is-disabled', swiperInstance.isEnd);
   };
 
+  //подія
   prevButton.addEventListener('click', () => {
     swiperInstance.slidePrev();
   });
-
+  //подія
   nextButton.addEventListener('click', () => {
     swiperInstance.slideNext();
   });
