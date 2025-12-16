@@ -2,6 +2,10 @@ import axios from 'axios';
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const list = document.querySelector('.feedbacks-list');
