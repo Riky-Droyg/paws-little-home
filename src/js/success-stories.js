@@ -40,7 +40,7 @@ function renderFeedbacks(list, feedbacks) {
       return `
         <li class="swiper-slide">
           <div class="star-rating" data-rating="${rating}">
-            <div class="stars-outer">
+            <div class="stars-field">
               <div class="stars-inner" style="width: ${starPercentage}%"></div>
             </div>
           </div>

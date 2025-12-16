@@ -39,23 +39,25 @@
 }
 
 .star-rating {
-  background-color: #9e935e;
   width: 100%;
 
   margin-bottom: 32px;
 }
 
+.stars-field {
+  display: inline-block;
+}
+
 .swiper-slide-feedbacks {
+  height: 150px;
   margin-bottom: 32px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
 
-  color: #91ac1b;
-  background-color: #8b8a81;
-
-  height: 150px;
+  color: rgb(2, 6, 10);
+  background-color: #ffffff;
 }
 
 .swiper-slide-author {
@@ -63,17 +65,8 @@
   font-size: 14px;
   line-height: 150%;
 
-  color: #b8642d;
-  background-color: #63625f;
-}
-
-.stars-outer {
-  display: inline-block;
-  position: relative;
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  font-size: 24px;
-  color: #e0e0e0; /* колір порожніх зірок */
+  color: rgb(2, 6, 10);
+  background-color: #ffffff;
 }
 
 /* #endregion */
@@ -93,7 +86,7 @@
 }
 
 .success-swiper-buttons {
-  background-color: #7e7067;
+  background-color: #ffffff;
   display: flex;
   gap: 16px;
 }
