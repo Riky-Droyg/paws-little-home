@@ -3,9 +3,6 @@ import axios from 'axios';
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 import 'swiper/css';
 
-//stars
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
 document.addEventListener('DOMContentLoaded', async () => {
   const list = document.querySelector('.feedbacks-list');
   if (!list) return;
