@@ -36,7 +36,7 @@ function renderFeedbacks(list, feedbacks) {
     .map(item => {
       const rating = parseFloat(item.rate);
       return `
-        <li class="swiper-slide">
+        <li class="swiper-slide success-swiper-slide">
           <div class="star-rating-container" data-score="${item.rate}"></div>
           <p class="swiper-slide-feedbacks">${item.description}</p>
           <p class="swiper-slide-author">${item.author}</p>
