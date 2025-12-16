@@ -102,34 +102,6 @@
 /* #endregion */
 
 /* #region success-swiper*/
-
-/* #endregion */
-
-/* з 375px макет стає адаптивним */
-@media (min-width: 375px) {
-}
-
-/* tablet */
-@media (min-width: 768px) {
-}
-
-/* desktop */
-@media (min-width: 1440px) {
-  .success-title {
-    max-width: 700px; /* для відображування заголовку */
-    margin-inline: auto;
-  }
-
-  .h2 {
-    font-weight: 700;
-    font-size: 48px;
-  }
-
-  .p {
-    font-size: 18px;
-  }
-}
-
 /* Контейнер — flex, все по центру в один рядок */
 .success-swiper {
   background-color: rgb(150, 113, 113);
@@ -167,8 +139,7 @@
 
 .custom-swiper-prev:hover,
 .custom-swiper-next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1);
+  border: 1px solid rgba(2, 6, 10, 0.6);
 }
 
 /* Примусово тримаємо пагинацію там, де вона в HTML — всередині .success-swiper */
@@ -200,3 +171,33 @@
   background-color: white !important; /* активна — повністю біла */
   transform: scale(1.3) !important;
 }
+
+/* #endregion */
+
+/* #region адаптивна верстка*/
+
+/* з 375px макет стає адаптивним */
+@media (min-width: 375px) {
+}
+
+/* tablet */
+@media (min-width: 768px) {
+}
+
+/* desktop */
+@media (min-width: 1440px) {
+  .success-title {
+    max-width: 700px; /* для відображування заголовку */
+    margin-inline: auto;
+  }
+
+  .h2 {
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  .p {
+    font-size: 18px;
+  }
+}
+/* #endregion */
