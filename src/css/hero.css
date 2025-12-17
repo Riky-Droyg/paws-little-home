@@ -65,25 +65,17 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-
-  min-width: 171px; /* ← ЗАМІСТЬ width */
-  min-height: 45px;
   padding: 12px 24px;
-
   background: #88765c;
   border: 1px solid #88765c;
   border-radius: 8px;
-
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #ffffff;
-
   text-decoration: none;
   cursor: pointer;
-
-  white-space: nowrap; /* щоб не ламалась у 2 рядки */
-
+  white-space: nowrap; 
   transition: background-color 0.2s ease, border-color 0.2s ease,
     box-shadow 0.15s ease, color 0.2s ease;
 }
