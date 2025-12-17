@@ -29,6 +29,17 @@ let paginationInstance = null;
 let lastMode = isPaginationMode();
 
 /* #endregion */
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
 function isPaginationMode() {
   return window.innerWidth >= BREAKPOINTS.tablet;
 }
@@ -72,12 +83,12 @@ function initPagination(totalItems) {
 }
 /* #region  handler-functions */
 async function initHomepage() {
+     hideLoadMoreBtn();
   currentCategory = 'Всі';
   currentPage = 1;
   setItemsPerPage();
   clearAnimals();
   showLoader();
-  hideLoadMoreBtn();
   if (!isPaginationMode()) {
     container.classList.add('is-hidden');
   }
@@ -103,21 +114,14 @@ async function initHomepage() {
 }
 async function handleResize() {
   const prevMode = lastMode;
+  const prevItemsPerPage = ITEMS_PER_PAGE;
   setItemsPerPage();
   const currentMode = isPaginationMode();
-  const itemsPerPageChanged =
-    paginationInstance &&
-    paginationInstance._options.itemsPerPage !== ITEMS_PER_PAGE;
-  if (
-    prevMode !== currentMode ||
-    itemsPerPageChanged ||
-    (!paginationInstance && currentMode)
-  ) {
+  if (prevMode !== currentMode ||
+    prevItemsPerPage !== ITEMS_PER_PAGE) {
     clearAnimals();
     currentPage = 1;
-
     const totalItems = await loadAnimals(currentCategory, currentPage);
-
     if (currentMode) {
       container.classList.remove('is-hidden');
       hideLoadMoreBtn();
@@ -137,8 +141,8 @@ async function handleAnimalsFilteredByCategory(event) {
   }
   setItemsPerPage();
   currentPage = 1;
+   hideLoadMoreBtn();
   clearAnimals();
-  hideLoadMoreBtn();
   const category = event.target.textContent.trim();
   currentCategory = category;
   try {
@@ -239,7 +243,9 @@ async function getAnimalsByCategory(category, page = 1) {
 }
 /* #endregion */
 async function loadAnimals(category, page) {
+ hideLoadMoreBtn();
   showLoader();
+  container.classList.add('is-hidden');
   const paginationActive = isPaginationMode();
   try {
     let data;
@@ -254,13 +260,10 @@ async function loadAnimals(category, page) {
     const animalsMarkup = renderAnimals(animals);
     if (paginationActive) {
       refs.animalsList.innerHTML = animalsMarkup;
-    } else {
-      refs.animalsList.insertAdjacentHTML('beforeend', animalsMarkup);
-    }
-    if (paginationActive) {
       container.classList.remove('is-hidden');
       hideLoadMoreBtn();
     } else {
+      refs.animalsList.insertAdjacentHTML('beforeend', animalsMarkup);
       container.classList.add('is-hidden');
       checkAndToggleLoadMoreBtn();
     }
@@ -350,6 +353,6 @@ function checkAndToggleLoadMoreBtn() {
 /* #endregion */
 
 document.addEventListener('DOMContentLoaded', initHomepage);
-window.addEventListener('resize', handleResize);
+window.addEventListener('resize', debounce(handleResize, 300));
 refs.categoriesList.addEventListener('click', handleAnimalsFilteredByCategory);
 refs.loadMoreBtn.addEventListener('click', handleLoadMoreBtnClicked);
