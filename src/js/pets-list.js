@@ -56,7 +56,7 @@ function createPaginationOptions(totalItems) {
   return {
     totalItems,
     itemsPerPage: ITEMS_PER_PAGE,
-    visiblePages: 5,
+    visiblePages: 4,
     page: currentPage,
     centerAlign: true,
   };

@@ -184,61 +184,82 @@
     margin-bottom: 16px;
   }
   #tui-pagination-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  height: 48px;
-  margin: 0;
-}
-#tui-pagination-container .tui-page-btn {
-  display: flex ;
-  align-items: center;
-  justify-content: center;
-border-radius: 8px;
-padding: 12px 24px;
-width: 57px;
-height: 45px;
-background-color: transparent;
-font-size: 16px;
-line-height: 1.5;
-color: #02060a;
-}
-#tui-pagination-container .tui-is-selected, .tui-pagination strong {
- border: 1px solid #b3b4b5;
-}
- #tui-pagination-container .tui-prev, #tui-pagination-container .tui-next {
-width: 48px;
-height: 48px;
-padding: 12px;
-  background-color: #eee9e3;
-  border: 1px solid #c3b49d;
- }
- #tui-pagination-container .tui-ico-prev  {
-background: url(../img/pets-list/arrow_back.svg);
-width: 24px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 48px;
+    margin: 0;
+  }
+  #tui-pagination-container .tui-page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 12px 24px;
+    width: 57px;
+    height: 45px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #02060a;
+  }
+  #tui-pagination-container .tui-is-selected,
+  .tui-pagination strong {
+    border: 1px solid #b3b4b5;
+  }
+  #tui-pagination-container .tui-prev,
+  #tui-pagination-container .tui-next {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    background-color: #eee9e3;
+    border: 1px solid #c3b49d;
+    transition: border-color 250ms ease-in-out;
+  }
+  #tui-pagination-container .tui-prev:hover,
+  #tui-pagination-container .tui-prev:focus,
+  #tui-pagination-container .tui-next:hover,
+  #tui-pagination-container .tui-next:focus {
+    border: 1px solid rgba(2, 6, 10, 0.6);
+  }
+   #tui-pagination-container .tui-prev:active,
+  #tui-pagination-container .tui-next:active {
+  border: 1px solid rgba(2, 6, 10, 0.6);
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  }
+  #tui-pagination-container .tui-ico-prev {
+    background: url(../img/pets-list/arrow_back.svg);
+    width: 24px;
     height: 24px;
     display: inline-block;
     overflow: visible;
- }
- #tui-pagination-container  .tui-ico-next {
-  background: url(../img/pets-list/arrow_forward.svg);
-  width: 24px; 
+  }
+  #tui-pagination-container .tui-ico-next {
+    background: url(../img/pets-list/arrow_forward.svg);
+    width: 24px;
     height: 24px;
     display: inline-block;
     overflow: visible;
- }
- #tui-pagination-container .tui-first,  #tui-pagination-container .tui-last {
-display: none;
- }
- #tui-pagination-container .tui-is-disabled {
-background-color: transparent;
-border: none;
- }
- #tui-pagination-container .tui-is-disabled >.tui-ico-prev, 
- #tui-pagination-container .tui-is-disabled >.tui-ico-next {
-  display: none;
- }
+  }
+  #tui-pagination-container .tui-first,
+  #tui-pagination-container .tui-last {
+    display: none;
+  }
+  #tui-pagination-container .tui-is-disabled {
+    background-color: transparent;
+    border: none;
+  }
+  #tui-pagination-container .tui-is-disabled {
+    border: 1px solid #f6f4f1;
+    opacity: 0.4;
+  }
+  #tui-pagination-container .tui-is-disabled > .tui-ico-prev {
+    background: url(../img/pets-list/arrow_back-disabled.svg);
+  }
+  #tui-pagination-container .tui-is-disabled > .tui-ico-next {
+    background: url(../img/pets-list/arrow_forward-disabled.svg);
+  }
 }
 @media screen and (min-width: 1440px) {
   .pets-list__title {
