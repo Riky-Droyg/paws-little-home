@@ -68,7 +68,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const swiperSlides = document.querySelectorAll('.about-swiper .swiper-slide');
+const swiperSlides = document.querySelectorAll(
+  '.about-swiper .about-swiper-slide'
+);
 
 swiperSlides.forEach((slide, index) => {
   const picture = slide.querySelector('picture');
@@ -82,9 +84,15 @@ const aboutSwiper = new Swiper('.about-swiper', {
   direction: 'horizontal',
   loop: false,
 
+  slidesPerView: 1, // тільки один слайд
+  spaceBetween: 20, // без проміжків
+  centeredSlides: false, // не центрований, щоб не видно було сусідніх
+  watchOverflow: true,
+
   pagination: {
     el: '.about-swiper-pagination',
     dynamicBullets: true,
+    clickable: true,
   },
 
   navigation: {
@@ -92,7 +100,22 @@ const aboutSwiper = new Swiper('.about-swiper', {
     prevEl: '.about-swiper-button-prev',
     disabledClass: 'swiper-button-disabled',
   },
+
+  breakpoints: {
+    768: {
+      // планшет
+      slidesPerView: 1,
+      spaceBetween: 140,
+    },
+    1440: {
+      // десктоп
+      slidesPerView: 1,
+      spaceBetween: 200,
+    },
+  },
 });
+
+document.querySelector('.about-swiper').style.overflow = 'visible';
 
 const btnPrev = document.querySelector('.about-swiper-button-prev img');
 const btnNext = document.querySelector('.about-swiper-button-next img');

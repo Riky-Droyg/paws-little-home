@@ -1,5 +1,5 @@
 .about-us-section {
-  background: var(--color-scheme-1-background);
+  overflow: visible;
 }
 
 .about-us-title {
@@ -23,16 +23,33 @@
   }
 }
 
+/* Slider */
+
 .about-swiper {
+  position: relative;
+  /* overflow: visible !important; */
   width: 100%;
-  height: 100%;
+  max-width: 335px;
+  margin: 0 auto;
 }
 
-.swiper-slide {
+@media screen and (min-width: 768px) {
+  .about-swiper {
+    max-width: 704px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about-swiper {
+    max-width: 1312px;
+  }
+}
+
+.about-swiper-slide {
   position: relative;
 }
 
-.swiper-slide::before {
+.about-swiper-slide::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -45,13 +62,14 @@
   );
 }
 
-.swiper-slide picture,
-.swiper-slide img {
+.about-swiper-slide picture,
+.about-swiper-slide img {
   display: block;
+  height: auto;
   width: 100%;
-  height: 100%;
 }
 
+/* Slide text */
 .slide-text {
   position: absolute;
   z-index: 2;
@@ -93,34 +111,28 @@
   }
 }
 
-.about-mobile-controls {
-  width: 335px;
-  height: 64px;
+.about-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 24px auto 64px;
-  position: relative;
-  z-index: 10;
+  /* width: 335px; або 100% для адаптиву */
+  width: 100%;
+  padding: 8px;
+  margin-top: 24px;
+  margin-bottom: 64px;
 }
 
-.about-mobile-controls .about-swiper-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  width: auto;
+.about-swiper-pagination {
   margin-left: 40px;
 }
 
-.about-mobile-controls .about-swiper-buttons {
+.about-swiper-buttons {
   display: flex;
   gap: 8px;
-  padding: 8px 8px;
 }
 
-.about-mobile-controls .about-swiper-button-prev,
-.about-mobile-controls .about-swiper-button-next {
+.about-swiper-button-prev,
+.about-swiper-button-next {
   width: 48px;
   height: 48px;
   padding: 12px;
@@ -138,16 +150,51 @@
     box-shadow 250ms ease, opacity 250ms ease;
 }
 
-.about-mobile-controls .about-swiper-button-prev:hover,
-.about-mobile-controls .about-swiper-button-next:hover,
-.about-mobile-controls .about-swiper-button-prev:focus-visible,
-.about-mobile-controls .about-swiper-button-next:focus-visible {
+@media screen and (min-width: 768px) {
+  .about-swiper-pagination {
+    margin: 0 auto;
+  }
+
+  .about-swiper-button-prev,
+  .about-swiper-button-next {
+    position: absolute;
+    top: 50%; /* по центру по вертикалі */
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c3b49d;
+    border-radius: 8px;
+    background: #eee9e3;
+
+    cursor: pointer;
+    z-index: 999; /* поверх slide-text */
+  }
+
+  .about-swiper-button-prev {
+    left: -16px; /* відступ від лівого краю слайду */
+  }
+
+  .about-swiper-button-next {
+    right: -16px; /* відступ від правого краю слайду */
+  }
+}
+
+.about-swiper-button-prev:hover,
+.about-swiper-button-next:hover,
+.about-swiper-button-prev:focus-visible,
+.about-swiper-button-next:focus-visible {
   border: 1px solid #02060a;
   background: #eee9e3;
 }
 
-.about-mobile-controls .about-swiper-button-prev:active,
-.about-mobile-controls .about-swiper-button-next:active {
+.about-swiper-button-prev:active,
+.about-swiper-button-next:active {
   border: 1px solid #02060a;
   background: #eee9e3;
 
@@ -155,8 +202,8 @@
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
-.about-mobile-controls .about-swiper-button-prev.swiper-button-disabled,
-.about-mobile-controls .about-swiper-button-next.swiper-button-disabled {
+.about-swiper-button-prev.swiper-button-disabled,
+.about-swiper-button-next.swiper-button-disabled {
   border: 1px solid #f6f4f1;
   background: #eee9e3;
   opacity: 0.4;
@@ -165,13 +212,13 @@
   pointer-events: none;
 }
 
-.about-mobile-controls .about-swiper-button-prev::after,
-.about-mobile-controls .about-swiper-button-next::after {
+.about-swiper-button-prev::after,
+.about-swiper-button-next::after {
   content: '';
 }
 
-.about-mobile-controls .about-swiper-button-prev img,
-.about-mobile-controls .about-swiper-button-next img {
+.about-swiper-button-prev img,
+.about-swiper-button-next img {
   width: 16px;
   height: 16px;
 }
