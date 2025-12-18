@@ -46,11 +46,6 @@
   background-color: #ffffff;
 }
 
-.star-rating-container img {
-  width: 20px;
-  height: 20px;
-}
-
 .swiper-slide-feedbacks {
   height: 150px;
   margin-bottom: 32px;
@@ -117,6 +112,22 @@
 .custom-swiper-prev:hover,
 .custom-swiper-next:hover {
   border: 1px solid rgba(2, 6, 10, 0.6);
+}
+
+.success-swiper .swiper-pagination-bullet {
+  background-color: #000;
+  opacity: 0.3;
+
+  width: 8px;
+  height: 8px;
+}
+
+.success-swiper .swiper-pagination-bullet-active {
+  background-color: #000;
+  opacity: 1;
+
+  width: 8px;
+  height: 8px;
 }
 
 /* #endregion */

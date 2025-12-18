@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,14 +13,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!list) return;
 
   try {
+    // 1. Завантажуємо jQuery + raty (потрібні для зірок) !!! (важко зрозуміти)
+    await loadRatyDeps();
+
+    // відгуки
     const feedbacks = await fetchFeedbacks();
+
+    // відгуки рендер
     renderFeedbacks(list, feedbacks);
 
+    // swiper + кнопки
     const swiperInstance = initSwiper();
     initSwiperButtons(swiperInstance);
   } catch (error) {
     console.error('Помилка запиту:', error);
-    list.innerHTML = '<li>Недоступні данні</li>';
+    list.innerHTML = '<li>Недоступні дані</li>';
   }
 });
 
@@ -34,6 +42,27 @@ async function fetchFeedbacks() {
 
   return response.data.feedbacks;
 }
+//#endregion
+
+//#region raty (дуже химерно, лише щоб прибрати лінки з html - інші бібліотеки не спрацювали, бракує досвіду)
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+async function loadRatyDeps() {
+  await loadScript(
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+  );
+  await loadScript(
+    'https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.min.js'
+  );
+}
+
 //#endregion
 
 //#region render
