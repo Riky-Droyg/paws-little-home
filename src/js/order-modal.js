@@ -53,10 +53,10 @@ refs.textareaComment.classList.remove('error');
 });
 
 // close modal - button x
-refs.closeModalBtn?.addEventListener('click', closeModal);
+refs.closeModalBtn.addEventListener('click', closeModal);
 
 // close modal - backdrop
-refs.orderModal?.addEventListener('click', (e) => {
+refs.orderModal.addEventListener('click', (e) => {
   if (e.target === refs.orderModal) closeModal();
 });
 
