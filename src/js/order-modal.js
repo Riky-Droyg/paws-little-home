@@ -25,7 +25,7 @@ console.log("refs", refs);
 console.log("inputName", refs.inputName);
 console.log("nameMsg", refs.nameMsg);
 
-function openModal() {
+export function openModal() {
   refs.orderModal.classList.add('is-open');
   refs.body.classList.add('no-scroll');
   refs.html.classList.add('no-scroll');
