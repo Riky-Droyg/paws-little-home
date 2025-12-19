@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" href="/animals-project/favicon-light.svg" media="(prefers-color-scheme: light)">
@@ -8,9 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Хатинка Лапок</title>
   <script type="module" crossorigin src="/animals-project/index.js"></script>
-  <link rel="modulepreload" crossorigin href="/animals-project/assets/vendor-DIl8Xt09.js">
-  <link rel="stylesheet" crossorigin href="/animals-project/assets/vendor-DVsjAL7U.css">
-  <link rel="stylesheet" crossorigin href="/animals-project/assets/index-YpHRbvLM.css">
+  <link rel="modulepreload" crossorigin href="/animals-project/assets/vendor-OaObx2aU.js">
+  <link rel="stylesheet" crossorigin href="/animals-project/assets/vendor-Dh9zEoBc.css">
+  <link rel="stylesheet" crossorigin href="/animals-project/assets/index-CF65h1UB.css">
 </head>
 
 <body>
@@ -21,13 +23,13 @@
     </a>
     <div class="header__desktop-container">
       <nav class="header__nav" aria-label="Головна навігація">
-        <a class="link__default" href="#friends">Знайди друга</a>
+        <a class="link__default" href="#pets-list">Знайди друга</a>
         <a class="link__default" href="#about">Про нас</a>
         <a class="link__default" href="#faq">Часті запитання</a>
         <a class="link__default" href="#stories">Історії успіху</a>
       </nav>
 
-      <a href="#tails" class="header__button button__black-default">Взяти друга</a>
+      <a href="#pets-list" class="header__button button__black-default">Взяти друга</a>
     </div>
 
     <button class="header__burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu"
@@ -41,7 +43,7 @@
 <div class="modal-menu" id="mobile-menu">
   <div class="modal-menu__container container">
     <nav class="modal-menu__nav" aria-label="Головна навігація">
-      <a class="link__default" href="#friends">Знайди друга</a>
+      <a class="link__default" href="#pets-list">Знайди друга</a>
       <a class="link__default" href="#about">Про нас</a>
       <a class="link__default" href="#faq">Часті запитання</a>
       <a class="link__default" href="#stories">Історії успіху</a>
@@ -79,8 +81,155 @@
   </div>
 </section>
 
-    
-    <section class="faq">
+    <section class="about-us-section">
+  <div class="container about-container">
+    <h2 class="about-us-title">Чому Хатинка Лапок</h2>
+
+    <div class="swiper about-swiper">
+      <div class="swiper-wrapper about-swiper-wrapper">
+        <div class="swiper-slide about-swiper-slide">
+          <picture>
+            <source
+              media="(min-width:1440px)"
+              srcset="/animals-project/assets/desktop-slide-1-min-B3uMJ6NY.webp 1x, /animals-project/assets/desktop-slide-1@2x-min-B4cGignM.webp 2x"
+            />
+            <source
+              media="(min-width:768px)"
+              srcset="/animals-project/assets/tablet-slide-1-min-C7GkEZm_.webp 1x, /animals-project/assets/tablet-slide-1@2x-min-CGu3omux.webp 2x"
+            />
+            <img
+              src="/animals-project/assets/mobile-slide-1-min-lMr9-Ec0.webp"
+              srcset="/animals-project/assets/mobile-slide-1@2x-min-C7kGqb0E.webp 2x"
+              alt="Собака у притулку, Хатинка Лапок"
+            />
+          </picture>
+          <p class="slide-text">
+            Все почалося у 2015 році з кількох небайдужих людей та одного
+            врятованого собаки. Сьогодні ми — один з найбільших притулків у
+            регіоні, але наша мета незмінна: дати другий шанс тим, кого зрадили.
+          </p>
+        </div>
+
+        <div class="swiper-slide about-swiper-slide">
+          <picture>
+            <source
+              media="(min-width:1440px)"
+              srcset="/animals-project/assets/desktop-slide-2-min-CnNV-lV2.webp 1x, /animals-project/assets/desktop-slide-2@2x-min-D4ah8_k4.webp 2x"
+            />
+            <source
+              media="(min-width:768px)"
+              srcset="/animals-project/assets/tablet-slide-2-min-D_W7pVpT.webp 1x, /animals-project/assets/tablet-slide-2@2x-min-C8eoPSvJ.webp 2x"
+            />
+            <img
+              src="/animals-project/assets/mobile-slide-2-min-IKq95mSR.webp"
+              srcset="/animals-project/assets/mobile-slide-2@2x-min-13p8EtHV.webp 2x"
+              alt="Волонтери допомагають тваринам"
+            />
+          </picture>
+          <p class="slide-text">
+            Ми рятуємо, реабілітуємо та знаходимо люблячі родини для
+            безпритульних тварин. Наша мета — не просто дати прихисток, а й
+            забезпечити кожному "хвостику" щасливе та повноцінне життя в новій
+            родині.
+          </p>
+        </div>
+
+        <div class="swiper-slide about-swiper-slide">
+          <picture>
+            <source
+              media="(min-width:1440px)"
+              srcset="/animals-project/assets/desktop-slide-3-min-D7OGJRQ7.webp 1x, /animals-project/assets/desktop-slide-3@2x-min-CFx4Lrjz.webp 2x"
+            />
+            <source
+              media="(min-width:768px)"
+              srcset="/animals-project/assets/tablet-slide-3-min-CTZlzilq.webp 1x, /animals-project/assets/tablet-slide-3@2x-min-CdLqaJqS.webp 2x"
+            />
+            <img
+              src="/animals-project/assets/mobile-slide-3-min-BpDnS7wG.webp"
+              srcset="/animals-project/assets/mobile-slide-3@2x-min-B5zP-UIC.webp 2x"
+              alt="Команда ветеринарів та волонтерів"
+            />
+          </picture>
+          <p class="slide-text">
+            "Хатинка Лапок" — це команда професійних ветеринарів, кінологів та
+            десятків волонтерів, які щодня вкладають свою душу та час у турботу
+            про наших підопічних. Ми працюємо 24/7, бо їхнє життя залежить від
+            нас.
+          </p>
+        </div>
+
+        <div class="swiper-slide about-swiper-slide">
+          <picture>
+            <source
+              media="(min-width:1440px)"
+              srcset="/animals-project/assets/desktop-slide-4-min-9SaAfWod.webp 1x, /animals-project/assets/desktop-slide-4@2x-min-BCxc6lPK.webp 2x"
+            />
+            <source
+              media="(min-width:768px)"
+              srcset="/animals-project/assets/tablet-slide-4-min-CHD_W3Qv.webp 1x, /animals-project/assets/tablet-slide-4@2x-min-B9ZqgUrK.webp 2x"
+            />
+            <img
+              src="/animals-project/assets/mobile-slide-4-min-bd0w2MZ3.webp"
+              srcset="/animals-project/assets/mobile-slide-4@2x-min-CPXixA-c.webp 2x"
+              alt="Безпечний та комфортний простір для тварин"
+            />
+          </picture>
+          <p class="slide-text">
+            Ми створили безпечний та комфортний простір. Кожна тварина отримує
+            якісне харчування, своєчасну ветеринарну допомогу, проходить
+            соціалізацію та гуляє на спеціально обладнаних майданчиках.
+          </p>
+        </div>
+
+        <div class="swiper-slide about-swiper-slide">
+          <picture>
+            <source
+              media="(min-width:1440px)"
+              srcset="/animals-project/assets/desktop-slide-5-min-g4E-0auP.webp 1x, /animals-project/assets/desktop-slide-5@2x-min-BqNesd8S.webp 2x"
+            />
+            <source
+              media="(min-width:768px)"
+              srcset="/animals-project/assets/tablet-slide-5-min-CCZ_Ntkm.webp 1x, /animals-project/assets/tablet-slide-5@2x-min-BMcFZgKp.webp 2x"
+            />
+            <img
+              src="/animals-project/assets/mobile-slide-5-min-id8Ekhu5.webp"
+              srcset="/animals-project/assets/mobile-slide-5@2x-min-B0nONPez.webp 2x"
+              alt="Допомога волонтерам та тваринам"
+            />
+          </picture>
+          <p class="slide-text">
+            Ваша допомога — безцінна. Ви можете взяти тваринку додому, стати
+            волонтером, допомогти фінансово або інформаційно. Кожен маленький
+            внесок наближає нас до великої мети — світу без безпритульних
+            тварин.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-controls">
+      <div class="about-swiper-pagination"></div>
+
+      <div class="about-swiper-buttons">
+        <button class="about-swiper-button-prev" aria-label="Previous slide">
+          <svg class="arrow arrow-prev" width="24" height="24">
+            <use href="#icon-arrow-left"></use>
+          </svg>
+        </button>
+
+        <button class="about-swiper-button-next" aria-label="Next slide">
+          <svg class="arrow arrow-next" width="24" height="24">
+            <use href="#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================== -->
+
+    <section class="faq" id="faq">
   <div class="container faq-container">
     <h2 class="faq-title">Все, що ви хотіли знати</h2>
     <ul class="accordion-container">
@@ -347,7 +496,66 @@
   </div>
 </div>
 
-    
+    <div class="order-modal__backdrop">
+  <div class="order-modal">
+    <button type="button" class="order-modal__close-btn">
+      <svg class="order-modal__close-icon" width="14" height="14">
+        <use href="#icon-close"></use>
+      </svg>
+    </button>
+    <h1 class="order-modal__title">Залишіть заявку на знайомство</h1>
+    <form class="order-modal__form">
+      <label class="order-modal__label">
+        Ім’я*
+        <input
+          class="order-modal__input"
+          type="text"
+          name="name"
+          placeholder="Андрій"
+          required
+        />
+        <p class="field__text" id="nameMsg"></p>
+      </label>
+      <label class="order-modal__label">
+        Телефон*
+        <input
+          class="order-modal__input"
+          type="tel"
+          name="phone"
+          placeholder="+38 (095) 555 99 22"
+          required
+        />
+        <p class="field__text" id="phoneMsg"></p>
+      </label>
+      <label class="order-modal__label">
+        Коментар*
+        <textarea
+          class="order-modal__textarea"
+          name="comment"
+          rows="5"
+          placeholder="Напишіть ваш коментар"
+        ></textarea>
+        <p class="field__text" id="commentMsg"></p>
+      </label>
+      <button class="send-form-btn" type="submit" aria-label="Закрити" disabled>
+        Надіслати
+      </button>
+    </form>
+  </div>
+</div>
+
+    <div class="scroll__btns-container">
+    <button id="scrollToTop" class="scroll__btn scroll__btn-top is-hidden">
+        <svg class="scroll__btn-icon-top" width="32" height="32">
+          <use href="#icon-icon-scroll"></use>
+        </svg>
+    </button>
+    <button id="scrollToBottom" class="scroll__btn scroll__btn-bottom">
+         <svg class="scroll__btn-icon-bottom" width="32" height="32">
+          <use href="#icon-icon-scroll"></use>
+        </svg>
+    </button>
+</div>
   </main>
 
   <footer class="footer">
