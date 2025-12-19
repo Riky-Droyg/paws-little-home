@@ -29,12 +29,14 @@ function openModal() {
   refs.orderModal.classList.add('is-open');
   refs.body.classList.add('no-scroll');
   refs.html.classList.add('no-scroll');
+  document.addEventListener('keydown', onEscKeydown);
 }
 
 function closeModal() {
   refs.orderModal.classList.remove('is-open');
   refs.body.classList.remove('no-scroll');
   refs.html.classList.remove('no-scroll');
+  document.removeEventListener('keydown', onEscKeydown);
 }
 
 // open modal
@@ -61,11 +63,14 @@ refs.orderModal?.addEventListener('click', (e) => {
 });
 
 // close modal - escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && refs.orderModal.classList.contains('is-open')) {
-    closeModal();
-  }
-});
+function onEscKeydown(e) {
+  if (e.key === 'Escape') closeModal();
+}
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === 'Escape' && refs.orderModal.classList.contains('is-open')) {
+//     closeModal();
+//   }
+// });
 
 function showLoader() {
     refs.loader.classList.remove('hidden');
