@@ -1,161 +1,214 @@
-.success-stories {
-  background-color: rgb(255, 255, 255);
+.success-stories {}
 
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
+.success-stories__wrapper {}
 
-/* #region success-title*/
-.success-title {
-  background-color: rgb(255, 255, 255);
-}
-
-.h2 {
-  font-weight: 700;
-  font-size: 36px;
-
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-align: center;
-
-  margin-bottom: 24px;
-}
-
-.p {
-  font-weight: 400;
-  font-size: 16px;
-
-  /* line-height: 24px; */
-  line-height: 1.5;
-  text-align: center;
-}
-/* #endregion */
-
-/* #region success-content*/
-.swiper {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-}
-
-.star-rating-container {
-  margin-bottom: 32px;
-  display: flex;
-  gap: 4px;
-
-  background-color: #ffffff;
-}
-
-.swiper-slide-feedbacks {
-  height: 150px;
-  margin-bottom: 32px;
-
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-
-  color: rgb(2, 6, 10);
-  background-color: #ffffff;
-}
-
-.swiper-slide-author {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 150%;
-
-  color: rgb(2, 6, 10);
-  background-color: #ffffff;
-}
-
-/* #endregion */
-
-/* #region success-swiper*/
-
-.success-swiper {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-}
-
-.success-swiper-buttons {
-  background-color: #ffffff;
-  display: flex;
-  gap: 16px;
-}
-
-/* кастомні кнопки */
-.custom-swiper-prev,
-.custom-swiper-next {
-  width: 48px;
-  height: 48px;
-  background-color: rgb(238, 233, 227);
-  border: 1px solid rgb(195, 180, 157);
-  border-radius: 8px;
-  color: white;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* disabled стан */
-.custom-swiper-prev.is-disabled,
-.custom-swiper-next.is-disabled {
-  border: none;
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none; /* Вимикаємо кліки на рівні CSS */
-}
-
-.custom-swiper-prev:hover,
-.custom-swiper-next:hover {
-  border: 1px solid rgba(2, 6, 10, 0.6);
-}
-
-.success-swiper .swiper-pagination-bullet {
-  background-color: #000;
-  opacity: 0.3;
-
-  width: 8px;
-  height: 8px;
-}
-
-.success-swiper .swiper-pagination-bullet-active {
-  background-color: #000;
-  opacity: 1;
-
-  width: 8px;
-  height: 8px;
-}
-
-/* #endregion */
-
-/* #region адаптивна верстка*/
-
-/* з 375px макет стає адаптивним */
-@media (min-width: 375px) {
-}
-
-/* tablet */
-@media (min-width: 768px) {
-}
-
-/* desktop */
-@media (min-width: 1440px) {
-  .success-title {
-    max-width: 700px; /* для відображування заголовку */
-    margin-inline: auto;
-  }
-
-  .h2 {
+.success-stories__header {
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 48px;
-  }
+    font-style: Bold;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: -1%;
+    text-align: center;
+    margin-bottom: 24px;
 
-  .p {
-    font-size: 18px;
-  }
 }
-/* #endregion */
+
+.success-stories__subtitle {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 40px;
+
+
+}
+
+.success-stories__container {
+    width: 100%;
+}
+
+.swiper {}
+
+
+
+.swiper-wrapper {}
+
+.success-stories__slides {}
+
+.swiper-slide {}
+
+.swiper-slide.success-stories__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.swiper-pagination {}
+
+
+
+.success-stories__nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    gap: 8px;
+
+
+}
+
+.success-stories__nav-buttons {
+    display: flex;
+}
+
+.swiper-button-prev {}
+
+.success-stories__btn {}
+
+.success-stories__btn--prev {}
+
+.swiper-button-next {}
+
+.success-stories__btn--next {}
+
+
+
+.success-stories__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.success-stories__pagination {
+    position: static !important;
+    width: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    /* width: 100px !important; */
+    overflow: hidden !important;
+}
+
+
+.success-stories__btn {
+    position: static !important;
+    margin: 0 !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.success-stories__icon {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.success-stories__btn::after {
+    font-size: 16px;
+}
+
+.swiper-pagination__wrapper {
+    width: 80px;
+}
+
+.success-stories__pagination.is-updating,
+.success-stories__pagination.is-updating * {
+    transition: none !important;
+}
+
+.success-stories__slide-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0%;
+    line-height: 1.5;
+    height: 100%;
+    max-height: calc(1.5em * 9);
+}
+
+@media (min-width: 1440px) {
+    .success-stories__slide-text {
+        max-height: calc(1.5em * 5);
+        font-size: 20px;
+
+
+    }
+}
+
+.success-stories__slide-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+
+}
+
+.success-stories__slide-rate {
+    /* margin-bottom: 32px; */
+}
+
+.js-rating {
+    display: flex;
+    /* margin-bottom: 32px; */
+}
+
+
+.success-stories__swiper {
+    width: 100%;
+    height: 345px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1440px) {
+
+    .success-stories__swiper {
+        height: 345px;
+    }
+}
+
+.success-stories__slides {
+    height: 100%;
+}
+
+.swiper-slide.success-stories__slide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+.js-rating {
+    flex: 0 0 auto;
+    display: flex;
+}
+
+.success-stories__slide-title {
+    flex: 0 0 auto;
+    /* margin-top: auto; */
+}
+
+.success-stories__slide-text {
+    /* flex: 1 1 auto; */
+    overflow: auto;
+    /* line-height: 1.5;
+  padding-right: 8px; */
+}
+
+/* optional: приємніший скрол на iOS */
+.success-stories__slide-text {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* optional: центрувати короткі тексти (вручну додай клас на слайд: .is-centered) */
+.swiper-slide.success-stories__slide.is-centered .success-stories__slide-text {
+    display: flex;
+    align-items: center;
+}

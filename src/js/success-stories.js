@@ -1,153 +1,201 @@
 import axios from 'axios';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+import 'css-star-rating/css/star-rating.css';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import Raty from 'raty-js';
+import 'raty-js/src/raty.css';
+import starOff from '/star-empty.svg';
+import starOn from '/star.svg';
+import starHalf from '/star-half.svg';
+import cancelOn from 'raty-js/src/images/cancel-on.png?url';
+import cancelOff from 'raty-js/src/images/cancel-off.png?url';
 
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
-document.addEventListener('DOMContentLoaded', async () => {
-  const list = document.querySelector('.feedbacks-list');
-  if (!list) return;
-
-  try {
-    // 1. Завантажуємо jQuery + raty (потрібні для зірок) !!! (важко зрозуміти)
-    await loadRatyDeps();
-
-    // відгуки
-    const feedbacks = await fetchFeedbacks();
-
-    // відгуки рендер
-    renderFeedbacks(list, feedbacks);
-
-    // swiper + кнопки
-    const swiperInstance = initSwiper();
-    initSwiperButtons(swiperInstance);
-  } catch (error) {
-    console.error('Помилка запиту:', error);
-    list.innerHTML = '<li>Недоступні дані</li>';
-  }
+const feedbackApi = axios.create({
+  baseURL: 'https://paw-hut.b.goit.study/api/feedbacks',
 });
 
-//#region server
-async function fetchFeedbacks() {
-  const response = await axios.get(
-    'https://paw-hut.b.goit.study/api/feedbacks',
-    {
-      params: { limit: 10 },
-    }
-  );
+const LIMIT = 10;
+const PREFETCH_BEFORE_END = 1;
 
-  return response.data.feedbacks;
-}
-//#endregion
-
-//#region raty (дуже химерно, лише щоб прибрати лінки з html - інші бібліотеки не спрацювали, бракує досвіду)
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-async function loadRatyDeps() {
-  await loadScript(
-    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
-  );
-  await loadScript(
-    'https://cdnjs.cloudflare.com/ajax/libs/raty/3.1.1/jquery.raty.min.js'
-  );
+function esc(s) {
+  return String(s ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 
-//#endregion
-
-//#region render
-function renderFeedbacks(list, feedbacks) {
-  const items = feedbacks
-    .map(item => {
-      const rating = parseFloat(item.rate);
-      return `
-        <li class="swiper-slide success-swiper-slide">
-          <div class="star-rating-container" data-score="${item.rate}"></div>
-          <p class="swiper-slide-feedbacks">${item.description}</p>
-          <p class="swiper-slide-author">${item.author}</p>
-        </li>
-      `;
-    })
-    .join('');
-
-  list.innerHTML = items;
-
-  initRatyStars();
+function pickItems(data) {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.feedbacks)) return data.feedbacks;
+  if (Array.isArray(data?.items)) return data.items;
+  if (Array.isArray(data?.results)) return data.results;
+  return [];
 }
 
-function initRatyStars() {
-  $('.star-rating-container').each(function () {
-    const score = parseFloat($(this).attr('data-score'));
+function hasMoreFromResponse(data, items, page) {
+  const totalPages =
+    data?.totalPages ?? data?.pagination?.totalPages ?? data?.meta?.totalPages;
 
-    $(this).raty({
-      readOnly: true,
+  if (Number.isFinite(totalPages)) return page < totalPages;
+
+  const totalItems =
+    data?.totalItems ??
+    data?.total ??
+    data?.pagination?.totalItems ??
+    data?.meta?.totalItems;
+
+  if (Number.isFinite(totalItems)) return page * LIMIT < totalItems;
+
+  return items.length === LIMIT;
+}
+
+function slideTpl(item) {
+  const name = esc(item?.author || 'Анонім');
+  const text = esc(item?.description || 'Коментар відсутній');
+
+  const scoreNum = Number(item?.rate);
+  const score = Number.isFinite(scoreNum) ? scoreNum : 0;
+
+  return `<div class="swiper-slide success-stories__slide">
+    <div class="js-rating" data-score="${score}"></div>
+    <p class="success-stories__slide-text">${text}</p>
+    <h3 class="success-stories__slide-title">${name}</h3>
+  </div>`;
+}
+
+const ratingMap = new WeakMap();
+
+function initRatings(scope) {
+  scope.querySelectorAll('.js-rating').forEach(el => {
+    if (ratingMap.has(el)) return;
+
+    const score = Number(el.dataset.score) || 0;
+
+    const r = new Raty(el, {
+      path: '',
+      starOn,
+      starOff,
+      starHalf,
+      cancelOn,
+      cancelOff,
+      half: true,
       halfShow: true,
-      score: score,
-      starType: 'i', // використовувати теги <i>
-      starOn: 'fa-solid fa-star', // повна зірка
-      starOff: 'fa-regular fa-star', // порожня зірка
-      starHalf: 'fa-solid fa-star-half-stroke', // половинка
+      readOnly: true,
+      score,
     });
+
+    r.init();
+    ratingMap.set(el, r);
   });
 }
-//#endregion
 
-//#region swiper
-function initSwiper() {
-  return new Swiper('.success-content', {
+async function fetchPage(page) {
+  const { data } = await feedbackApi.get('/', {
+    params: { limit: LIMIT, page },
+  });
+  const items = pickItems(data);
+  const hasMore = hasMoreFromResponse(data, items, page);
+  return { items, hasMore };
+}
+
+async function initSuccessStories() {
+  const root = document.querySelector('.success-stories');
+  if (!root) return;
+
+  const slidesEl = root.querySelector('.success-stories__slides');
+  if (!slidesEl) return;
+
+  let page = 1;
+  let isLoading = false;
+  let hasMore = true;
+
+  const first = await fetchPage(page);
+  hasMore = first.hasMore;
+
+  if (!first.items.length) {
+    root.classList.add('success-stories--empty');
+    slidesEl.innerHTML = '';
+    return;
+  }
+
+  slidesEl.innerHTML = first.items.map(slideTpl).join('');
+  initRatings(slidesEl);
+
+  async function loadNext(s) {
+    if (!hasMore || isLoading) return;
+    isLoading = true;
+
+    try {
+      page += 1;
+      const next = await fetchPage(page);
+      hasMore = next.hasMore;
+
+      if (!next.items.length) {
+        hasMore = false;
+        return;
+      }
+
+      const pagEl = s.pagination?.el;
+      if (pagEl) pagEl.classList.add('is-updating');
+
+      s.appendSlide(next.items.map(slideTpl));
+      s.update();
+
+      initRatings(s.el);
+
+      s.pagination.render();
+      s.pagination.update();
+
+      if (pagEl) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => pagEl.classList.remove('is-updating'));
+        });
+      }
+    } catch (e) {
+      page -= 1;
+      console.error(e);
+    } finally {
+      isLoading = false;
+    }
+  }
+
+  new Swiper('.success-stories__swiper', {
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 1,
+    pagination: {
+      el: '.success-stories__pagination',
+      clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
+    },
+    navigation: {
+      nextEl: '.success-stories__btn--next',
+      prevEl: '.success-stories__btn--prev',
+      disabledClass: 'swiper-button-disabled',
+    },
     slidesPerView: 1,
     spaceBetween: 32,
-    loop: false, // циклічність
-    pagination: {
-      el: document.querySelector('.success-swiper .swiper-navigation'),
-      clickable: true,
-    },
     breakpoints: {
       768: { slidesPerView: 2 },
-      1440: { slidesPerView: 2 },
+    },
+    on: {
+      slideChange(s) {
+        const total = s.slides.length;
+        const idx = s.activeIndex;
+        if (idx >= total - 1 - PREFETCH_BEFORE_END) loadNext(s);
+      },
+      async reachEnd(s) {
+        await loadNext(s);
+      },
     },
   });
 }
-//#endregion
 
-//#region buttons
-function initSwiperButtons(swiperInstance) {
-  const prevButton = document.querySelector('.custom-swiper-prev');
-  const nextButton = document.querySelector('.custom-swiper-next');
-
-  if (!prevButton || !nextButton) return;
-
-  const updateButtonsState = () => {
-    prevButton.disabled = swiperInstance.isBeginning;
-    nextButton.disabled = swiperInstance.isEnd;
-
-    prevButton.classList.toggle('is-disabled', swiperInstance.isBeginning);
-    nextButton.classList.toggle('is-disabled', swiperInstance.isEnd);
-  };
-
-  //подія
-  prevButton.addEventListener('click', () => {
-    swiperInstance.slidePrev();
-  });
-  //подія
-  nextButton.addEventListener('click', () => {
-    swiperInstance.slideNext();
-  });
-
-  // оновлення після ініціалізації
-  updateButtonsState();
-
-  // оновлення при кожній зміні
-  swiperInstance.on('slideChange', updateButtonsState);
-}
-//#endregion
+document.addEventListener('DOMContentLoaded', () => {
+  initSuccessStories().catch(console.error);
+});

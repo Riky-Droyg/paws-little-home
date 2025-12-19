@@ -1,1 +1,95 @@
+.faq-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 
+.faq-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+  margin-bottom: 40px;
+}
+
+.ac__custom {
+  background-color: #EEE9E3 !important;
+  margin-bottom: 16px !important;
+}
+
+.ac-question {}
+
+.ac .ac-trigger.ac-trigger__custom {
+  padding: 20px 72px 20px 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+@media (min-width: 1440px) {
+  .ac .ac-trigger.ac-trigger__custom {
+    font-size: 18px;
+  }
+}
+
+.ac .ac-trigger.ac-trigger__custom:focus {
+  color: #02060a;
+}
+
+.ac .ac-trigger::after {
+  right: 29px !important;
+}
+
+@media (min-width: 768px) {
+  .ac .ac-trigger::after {
+    right: 24px !important;
+  }
+}
+
+.ac-panel__custom-wrapper {
+  padding: 0px 24px 24px 24px;
+
+}
+
+.ac .ac-panel.ac-panel__custom {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+@media (min-width: 1440px) {
+  .ac .ac-panel.ac-panel__custom {
+    font-size: 16px;
+  }
+}
+
+.ac .ac-panel .ac-text.ac-text__custom {
+  padding: 0;
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.ac-panel__custom-wrapper ol {
+  list-style-type: decimal !important;
+  padding-left: 24px;
+
+}
+
+.ac-panel__custom-wrapper ul {
+  list-style-type: disc !important;
+  padding-left: 24px;
+}
+
+.ac-panel__custom-wrapper li:not(:last-child) {
+  margin-bottom: 20px;
+}
