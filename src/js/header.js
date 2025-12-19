@@ -33,11 +33,6 @@ buttonHeaderBurger.addEventListener('click', e => {
   e.stopPropagation();
   toggleMenu();
 });
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && isOpen()) closeMenu();
-});
-
 document.addEventListener('click', e => {
   if (!isOpen()) return;
 

@@ -1,8 +1,3 @@
-.scroll__btns-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 .scroll__btn {
   position: fixed;
   bottom: 20px;
@@ -25,22 +20,16 @@
   transform: scale(1.05); 
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
-.scroll__btn-top {
-    bottom: 90px;
-}
- .scroll__btn-icon-bottom {
-    transform: rotate(180deg);
- }
- .scroll__btn-icon-top,
- .scroll__btn-icon-bottom {
+ .scroll__btn-icon-top {
     fill: #332C22;
  }
 .is-hidden {
+display: none;
   opacity: 0;
   visibility: hidden;
 }
 @media screen and (min-width: 768px) {
-    .scroll__btns-container {
-        display: none;
-    }
+.scroll__btn {
+  display: none;
+}
 }
