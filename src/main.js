@@ -9,3 +9,4 @@ import '/js/success-stories.js';
 import '/js/animal-details.js';
 import '/js/order-modal.js';
 import '/js/footer.js';
+import '/js/scroll-btn.js'

@@ -2,7 +2,7 @@ body {
   font-family: "IBMPlexSans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: #F6F4F1;
+  background-color: #f6f4f1;
 }
 
 /* базовий контейнер */
@@ -41,6 +41,8 @@ body {
 .loader {
   display: block;
   margin: 0 auto;
+  display: block;
+  margin: 0 auto;
   position: relative;
   width: 108px;
   display: flex;
@@ -58,7 +60,7 @@ body {
   width: 48px;
   height: 48px;
   background-color: #fff;
-  background-image: radial-gradient(circle 14px, #0D161B 100%, transparent 0);
+  background-image: radial-gradient(circle 14px, #0d161b 100%, transparent 0);
   background-repeat: no-repeat;
   border-radius: 50%;
   animation: eyeMove 10s infinite, blink 10s infinite;

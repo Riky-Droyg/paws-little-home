@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { API_ENDPOINTS, refs } from './pets-list';
 import iziToast from 'izitoast';
+import { openModal } from './order-modal';
 const MAX_LIMIT = 30;
 const backdrop = document.querySelector('.backdrop');
 const modalContent = document.querySelector('.js-modal-content');
@@ -32,7 +33,7 @@ async function handleModalDEtailsOpened(event) {
     const modalConfirmBtn = document.querySelector('#modal-btn');
     modalConfirmBtn.addEventListener('click', () => {
       hideModal();
-      //function OpenOrderNodal();
+      openModal();
     });
   } catch (error) {
     throw error;

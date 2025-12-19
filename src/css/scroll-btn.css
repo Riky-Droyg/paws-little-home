@@ -1,0 +1,46 @@
+.scroll__btns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.scroll__btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    background-color: rgba(246, 244, 241, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  transition: all 250ms ease-in-out;
+  z-index: 1000;
+}
+.scroll__btn:active {
+  background-color: rgba(246, 244, 241, 0.9);
+  transform: scale(1.05); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+.scroll__btn-top {
+    bottom: 90px;
+}
+ .scroll__btn-icon-bottom {
+    transform: rotate(180deg);
+ }
+ .scroll__btn-icon-top,
+ .scroll__btn-icon-bottom {
+    fill: #332C22;
+ }
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+    .scroll__btns-container {
+        display: none;
+    }
+}
