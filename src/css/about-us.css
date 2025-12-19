@@ -1,6 +1,3 @@
-/* =========================
-   SLIDE-TEXT — FLUID 320–374px
-========================= */
 
 
 @media screen and (max-width: 374px) {
@@ -23,7 +20,6 @@
 
 /* =========================
    MOBILE (320–767px)
-========================= */
 .about-swiper-slide {
   position: relative;
 }
@@ -175,7 +171,6 @@
 
 /* =========================
    TABLET (768–1439px)
-========================= */
 @media screen and (min-width: 768px) {
   .about-us-title {
     padding: 0px 32px 00px 32px;
@@ -222,7 +217,6 @@
 
 /* =========================
    DESKTOP (1440px+)
-========================= */
 @media screen and (min-width: 1440px) {
   .about-us-section {
     padding-top: 80px;
