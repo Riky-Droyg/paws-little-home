@@ -5,7 +5,6 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
-
 export default defineConfig(({ command }) => {
   return {
     define: {
@@ -40,7 +39,7 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
     },
     plugins: [
-      createSvgIconsPlugin({
+       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/img/SVG-sprite')],
         symbolId: 'icon-[name]',
         inject: 'body-last',
