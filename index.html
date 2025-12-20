@@ -30,7 +30,7 @@
   <script type="module" crossorigin src="/animals-project/index.js"></script>
   <link rel="modulepreload" crossorigin href="/animals-project/assets/vendor-OaObx2aU.js">
   <link rel="stylesheet" crossorigin href="/animals-project/assets/vendor-Dh9zEoBc.css">
-  <link rel="stylesheet" crossorigin href="/animals-project/assets/index-UEbkqCz1.css">
+  <link rel="stylesheet" crossorigin href="/animals-project/assets/index-BVzoegtG.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
     <div class="header__desktop-container">
       <nav class="header__nav" aria-label="Головна навігація">
         <a class="link__default" href="#pets-list">Знайди друга</a>
-        <a class="link__default" href="#about">Про нас</a>
+        <a class="link__default" href="#about-us">Про нас</a>
         <a class="link__default" href="#faq">Часті запитання</a>
         <a class="link__default" href="#stories">Історії успіху</a>
       </nav>
@@ -62,7 +62,7 @@
   <div class="modal-menu__container container">
     <nav class="modal-menu__nav" aria-label="Головна навігація">
       <a class="link__default" href="#pets-list">Знайди друга</a>
-      <a class="link__default" href="#about">Про нас</a>
+      <a class="link__default" href="#about-us">Про нас</a>
       <a class="link__default" href="#faq">Часті запитання</a>
       <a class="link__default" href="#stories">Історії успіху</a>
     </nav>
@@ -72,24 +72,39 @@
 </div>
 
   <main>
-    <section class="hero-section" id="hero">
-  <img
-    class="hero-bg"
-    src="/animals-project/assets/hero-mobile@1x-DoPX3erk.webp"
-    srcset="/animals-project/assets/hero-mobile@1x-DoPX3erk.webp 1x, /animals-project/assets/hero-mobile@2x-BxB1Wk-g.webp 2x"
-    alt=""
-    fetchpriority="high"
-    decoding="async"
-  />
-  <div class="container hero-container">
-    <h1 class="hero-header">
-      Кожне життя має значення. Знайди свого вірного друга
-    </h1>
-    <p class="hero-text">
-      Сотні котиків та собачок у притулку Хатинка Лапок чекають на свою родину.
-      Подаруйте їм дім.
-    </p>
-    <a href="#success-stories" class="hero-btn-link"> Подивитись історії </a>
+    <section class="hero" id="hero">
+  <div class="hero__container container">
+    <div class="hero__bg">
+      <picture class="hero__picture">
+        <source media="(min-width: 1280px)"
+          srcset="/animals-project/assets/hero-desktop@1x-CiqRsr3l.webp 1x, /animals-project/assets/hero-desktop@2x--CFQRpHN.webp 2x"
+          type="image/webp" />
+
+        <source media="(min-width: 768px)"
+          srcset="/animals-project/assets/hero-tablet@1x-DauBf8mL.webp 1x, /animals-project/assets/hero-tablet@2x-CJacPUEz.webp 2x"
+          type="image/webp" />
+
+        <img class="hero__bg-img"
+          src="/animals-project/assets/hero-mobile@1x-DoPX3erk.webp"
+          srcset="/animals-project/assets/hero-mobile@2x-BxB1Wk-g.webp 2x"
+          alt=""
+          fetchpriority="high"
+          decoding="async" />
+      </picture>
+    </div>
+
+    <div class="hero__content">
+      <h1 class="hero__title">
+        Кожне життя має значення. Знайди свого вірного друга
+      </h1>
+
+      <p class="hero__text">
+        Сотні котиків та собачок у притулку Хатинка Лапок чекають на свою родину.
+        Подаруйте їм дім.
+      </p>
+
+      <a href="#success-stories" class="hero__btn">Подивитись історії</a>
+    </div>
   </div>
 </section>
 
@@ -107,7 +122,7 @@
   </div>
 </section>
 
-    <section class="about-us-section">
+    <section class="about-us-section" id="about-us">
   <div class="container about-container">
     <h2 class="about-us-title">Чому Хатинка Лапок</h2>
 
@@ -446,7 +461,7 @@
     </ul>
   </div>
 </section>
-    <section class="success-stories">
+    <section class="success-stories" id="stories">
     <div class="success-stories__wrapper container">
         <div class="success-stories__wrapper-head">
             <h2 class="success-stories__header">Щасливі історії, що надихають</h2>
@@ -627,8 +642,6 @@
         </a>
       </li>
     </ul>
-
-    <hr class="footer__divider" />
 
     <small class="footer__copyright">
       &#169; 2025 Хатинка лапок. Всі права захищені.
