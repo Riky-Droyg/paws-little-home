@@ -1,11 +1,86 @@
 # Paws’ Little Home 🐾
 
-**Paws’ Little Home** is an animal shelter website where you can **choose a pet online** and **submit an adoption request**.
+**Хатинка Лапок** — це веб-сайт притулку для тварин, де можна переглянути тварин, які шукають дім, дізнатися про них детальніше та подати заявку на усиновлення.
 
-## Features
+Навчальний командний фронтенд-проєкт, створений студентами курсу **JavaScript** у школі **GOIT** для практики HTML, CSS, JavaScript та командної роботи з Git/GitHub.
 
-* Pet catalog with photos and short descriptions
-* Individual pet page (details, personality, age, etc.)
-* Filtering/search (optional)
-* Adoption request form (contact details + comment)
-* Confirmation message after a successful submission
+## Основні можливості
+
+- Каталог тварин з фото та короткими описами
+- Детальна сторінка тварини (вік, характер, історія тощо)
+- Форма подачі заявки на усиновлення
+- Інформація про притулок, FAQ, історії успіху
+- Адаптивний дизайн для мобільних пристроїв
+
+## Демо
+
+🔗 **[Переглянути живий сайт](https://riky-droyg.github.io/animals-project/)**
+
+## Технології
+
+- HTML5
+- CSS3 (Flexbox, Grid, responsive)
+- JavaScript (ES6+)
+- Vite (швидкий dev-сервер та білд)
+
+## Учасники команди
+
+Проєкт розробляли **9 студентів** GOIT:
+
+- [Riky-Droyg](https://github.com/Riky-Droyg)
+- [YurchenkoMaxx](https://github.com/YurchenkoMaxx)
+- [Pavlo-Hapeniuk](https://github.com/Pavlo-Hapeniuk)
+- [GTAccount1](https://github.com/GTAccount1)
+- [Romario198901](https://github.com/Romario198901)
+- [Oleksii996](https://github.com/Oleksii996)
+- [Nataliia-Kalinina-1](https://github.com/Nataliia-Kalinina-1)
+- [Mykola1812-hub](https://github.com/Mykola1812-hub)
+- [Ruslan-Dev-JS](https://github.com/Ruslan-Dev-JS)
+
+## Структура проєкту
+
+```text
+animals-project/
+├── .github/              # GitHub workflows (CI/CD)
+├── node_modules/         # (ігнорується Git)
+├── public/               # Статичні файли
+├── src/
+│   ├── css/              # Стилі
+│   ├── fonts/            # Локальні шрифти
+│   ├── img/              # Зображення тварин
+│   ├── js/               # JavaScript модулі
+│   └── partials/         # HTML-компоненти / шаблони
+├── index.html            # Головна сторінка
+├── main.js               # Точка входу JavaScript
+├── .editorconfig
+├── .gitignore
+├── .prettierrc.json
+├── package.json
+├── package-lock.json
+└── vite.config.js
+```
+
+
+## Як запустити локально
+
+Клонуйте репозиторій:
+```
+git clone https://github.com/Riky-Droyg/animals-project.git
+cd animals-project
+```
+Встановіть залежності:
+```
+npm install
+```
+Запустіть сервер розробки:
+
+```
+npm run dev
+```
+
+## Ліцензія
+
+MIT License — вільне використання для навчання та особистих проєктів.
+
+Створено в рамках курсу JavaScript від GOIT
+© 2025
