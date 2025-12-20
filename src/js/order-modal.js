@@ -30,9 +30,6 @@ const refs = {
 };
 
 
-console.log("refs", refs);
-console.log("inputName", refs.inputName);
-console.log("nameMsg", refs.nameMsg);
 
 export function openModal() {
   refs.orderModal.classList.add('is-open');
@@ -167,7 +164,6 @@ refs.form.addEventListener("submit", async (e) => {
         animalId: refs.animalId,
         comment: refs.textareaComment.value.trim(),
     }
-    console.log("formData", formData);
 
     try {
         showLoader();
@@ -186,7 +182,6 @@ refs.form.addEventListener("submit", async (e) => {
             messageColor: '#02060A',
             progressBarColor: '#88765C',             
 });
-        console.log("orderData", orderData);
         refs.form.reset();
         updateSubmitBtn();
         closeModal();

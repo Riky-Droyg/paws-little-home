@@ -159,7 +159,6 @@ async function initSuccessStories() {
       }
     } catch (e) {
       page -= 1;
-      console.error(e);
     } finally {
       isLoading = false;
     }
