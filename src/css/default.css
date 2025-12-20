@@ -1,3 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+:target {
+  scroll-margin-top: 20px;
+}
+
 body {
   font-family: 'IBMPlexSans', system-ui, -apple-system, 'Segoe UI', Roboto,
     Arial, sans-serif;
@@ -179,17 +186,17 @@ body {
 }
 
 
-  .link__default {
-    color: #02060A;
-    line-height: 150%;
-  }
+.link__default {
+  color: #02060A;
+  line-height: 150%;
+}
 
-  .link__default:hover,
-  .link__default:focus {
-    box-shadow: 0 1px 0 rgba(2, 6, 10, 1);
-  }
+.link__default:hover,
+.link__default:focus {
+  box-shadow: 0 1px 0 rgba(2, 6, 10, 1);
+}
 
-  .link__default:active {
-    color: #88765C;
-    box-shadow: 0 1px 0 #88765C;
-  }
+.link__default:active {
+  color: #88765C;
+  box-shadow: 0 1px 0 #88765C;
+}

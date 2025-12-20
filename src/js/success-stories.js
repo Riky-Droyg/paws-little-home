@@ -61,10 +61,12 @@ function slideTpl(item) {
   const score = Number.isFinite(scoreNum) ? scoreNum : 0;
 
   return `<div class="swiper-slide success-stories__slide">
-    <div class="js-rating" data-score="${score}"></div>
-    <p class="success-stories__slide-text">${text}</p>
+    <div class="success-stories__wrapper">
+        <div class="js-rating" data-score="${score}"></div>
+        <p class="success-stories__slide-text">${text}</p>
+    </div>
     <h3 class="success-stories__slide-title">${name}</h3>
-  </div>`;
+</div>`;
 }
 
 const ratingMap = new WeakMap();

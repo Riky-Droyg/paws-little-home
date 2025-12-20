@@ -1,20 +1,35 @@
-<section class="hero-section" id="hero">
-  <img
-    class="hero-bg"
-    src="/img/hero/hero-mobile@1x.webp"
-    srcset="/img/hero/hero-mobile@1x.webp 1x, /img/hero/hero-mobile@2x.webp 2x"
-    alt=""
-    fetchpriority="high"
-    decoding="async"
-  />
-  <div class="container hero-container">
-    <h1 class="hero-header">
-      Кожне життя має значення. Знайди свого вірного друга
-    </h1>
-    <p class="hero-text">
-      Сотні котиків та собачок у притулку Хатинка Лапок чекають на свою родину.
-      Подаруйте їм дім.
-    </p>
-    <a href="#success-stories" class="hero-btn-link"> Подивитись історії </a>
+<section class="hero" id="hero">
+  <div class="hero__container container">
+    <div class="hero__bg">
+      <picture class="hero__picture">
+        <source media="(min-width: 1280px)"
+          srcset="/img/hero/hero-desktop@1x.webp 1x, /img/hero/hero-desktop@2x.webp 2x"
+          type="image/webp" />
+
+        <source media="(min-width: 768px)"
+          srcset="/img/hero/hero-tablet@1x.webp 1x, /img/hero/hero-tablet@2x.webp 2x"
+          type="image/webp" />
+
+        <img class="hero__bg-img"
+          src="/img/hero/hero-mobile@1x.webp"
+          srcset="/img/hero/hero-mobile@2x.webp 2x"
+          alt=""
+          fetchpriority="high"
+          decoding="async" />
+      </picture>
+    </div>
+
+    <div class="hero__content">
+      <h1 class="hero__title">
+        Кожне життя має значення. Знайди свого вірного друга
+      </h1>
+
+      <p class="hero__text">
+        Сотні котиків та собачок у притулку Хатинка Лапок чекають на свою родину.
+        Подаруйте їм дім.
+      </p>
+
+      <a href="#success-stories" class="hero__btn">Подивитись історії</a>
+    </div>
   </div>
 </section>
