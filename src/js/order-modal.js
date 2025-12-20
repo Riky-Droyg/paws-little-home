@@ -3,23 +3,31 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 
+const modal = document.querySelector('.order-modal__backdrop');
+
 const refs = {
-    orderModal: document.querySelector('.order-modal__backdrop'),
-    closeModalBtn: document.querySelector('.order-modal__close-btn'),
-    openModalBtn: document.querySelector('.order-modal__open-btn'), // додати клас звідки відкриватиметься модалка
-    body: document.body,
-    html: document.documentElement,
-    form: document.querySelector('form'),
-    inputName: document.querySelector("input[name='name']"),
-    nameMsg: document.querySelector('#nameMsg'),
-    inputPhone: document.querySelector("input[name='phone']"),
-    phoneMsg: document.querySelector('#phoneMsg'),
-    textareaComment: document.querySelector("textarea[name='comment']"),
-    commentMsg: document.querySelector('#commentMsg'),
-    submitBtn: document.querySelector('.send-form-btn'),
-    animalId: "667ad1b8e4b01a2b3c4d5e55",
-    loader: document.querySelector('.loader'),
+  orderModal: modal,
+  closeModalBtn: modal?.querySelector('.order-modal__close-btn'),
+  openModalBtn: document.querySelector('.order-modal__open-btn'),
+
+  body: document.body,
+  html: document.documentElement,
+
+  form: modal?.querySelector('.order-modal__form'),
+  inputName: modal?.querySelector("input[name='name']"),
+  nameMsg: modal?.querySelector('#nameMsg'),
+
+  inputPhone: modal?.querySelector("input[name='phone']"),
+  phoneMsg: modal?.querySelector('#phoneMsg'),
+
+  textareaComment: modal?.querySelector("textarea[name='comment']"),
+  commentMsg: modal?.querySelector('#commentMsg'),
+
+  submitBtn: modal?.querySelector('.send-form-btn'),
+  animalId: "667ad1b8e4b01a2b3c4d5e55",
+  loader: document.querySelector('.loader'),
 };
+
 
 console.log("refs", refs);
 console.log("inputName", refs.inputName);
@@ -29,12 +37,14 @@ export function openModal() {
   refs.orderModal.classList.add('is-open');
   refs.body.classList.add('no-scroll');
   refs.html.classList.add('no-scroll');
+  document.addEventListener('keydown', onEscKeydown);
 }
 
 function closeModal() {
   refs.orderModal.classList.remove('is-open');
   refs.body.classList.remove('no-scroll');
   refs.html.classList.remove('no-scroll');
+  document.removeEventListener('keydown', onEscKeydown);
 }
 
 // open modal
@@ -61,11 +71,14 @@ refs.orderModal?.addEventListener('click', (e) => {
 });
 
 // close modal - escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && refs.orderModal.classList.contains('is-open')) {
-    closeModal();
-  }
-});
+function onEscKeydown(e) {
+  if (e.key === 'Escape') closeModal();
+}
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === 'Escape' && refs.orderModal.classList.contains('is-open')) {
+//     closeModal();
+//   }
+// });
 
 function showLoader() {
     refs.loader.classList.remove('hidden');
