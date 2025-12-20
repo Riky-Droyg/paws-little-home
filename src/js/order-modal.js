@@ -1,9 +1,10 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { btnTop } from './scroll-btn';
 
 
-const refs = {
+ const refs = {
     orderModal: document.querySelector('.order-modal__backdrop'),
     closeModalBtn: document.querySelector('.order-modal__close-btn'),
     openModalBtn: document.querySelector('.order-modal__open-btn'), // додати клас звідки відкриватиметься модалка
@@ -29,12 +30,14 @@ export function openModal() {
   refs.orderModal.classList.add('is-open');
   refs.body.classList.add('no-scroll');
   refs.html.classList.add('no-scroll');
+  btnTop.classList.add('is-hidden');
 }
 
 function closeModal() {
   refs.orderModal.classList.remove('is-open');
   refs.body.classList.remove('no-scroll');
   refs.html.classList.remove('no-scroll');
+   btnTop.classList.remove('is-hidden');
 }
 
 // open modal

@@ -185,9 +185,9 @@ async function handleLoadMoreBtnClicked() {
   setItemsPerPage();
   try {
     await loadAnimals(currentCategory, currentPage);
-    window.scrollBy({
-      behavior: 'smooth'
-    });
+    // window.scrollBy({
+    //   behavior: 'smooth'
+    // });
     currentPage += 1;
   } catch (error) {
     throw error;

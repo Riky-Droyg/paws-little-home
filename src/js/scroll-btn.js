@@ -1,5 +1,6 @@
-const btnTop = document.querySelector("#scrollToTop");
 
+
+export const btnTop = document.querySelector("#scrollToTop");
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY; 
   if (scrollTop > 100) {
