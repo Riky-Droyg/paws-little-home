@@ -33,7 +33,7 @@
   <script type="module" crossorigin src="/animals-project/index.js"></script>
   <link rel="modulepreload" crossorigin href="/animals-project/assets/vendor-DvROesLm.js">
   <link rel="stylesheet" crossorigin href="/animals-project/assets/vendor-CQbtXoKQ.css">
-  <link rel="stylesheet" crossorigin href="/animals-project/assets/index-CfMPtSk1.css">
+  <link rel="stylesheet" crossorigin href="/animals-project/assets/index-Cy24L0bp.css">
 </head>
 
 <body>
@@ -91,7 +91,7 @@
 
   <main>
     <section class="hero" id="hero">
-  <div class="hero__container ">
+  <div class="hero__container">
     <div class="hero__bg" aria-hidden="true">
       <picture class="hero__picture">
         <source
@@ -110,8 +110,7 @@
           class="hero__bg-img"
           src="/animals-project/assets/hero-mobile@1x-DoPX3erk.webp"
           srcset="/animals-project/assets/hero-mobile@2x-BxB1Wk-g.webp 2x"
-          alt="hero-bg-img"
-          role="presentation"
+          alt=""
           fetchpriority="high"
           loading="eager"
           decoding="async"
@@ -656,18 +655,15 @@
         aria-label="Слайдер історій успіху"
         aria-roledescription="carousel"
       >
-        <div
-          class="swiper-wrapper success-stories__slides"
-          aria-live="polite"
-        >
+        <div class="swiper-wrapper success-stories__slides" aria-live="polite">
+          <!-- слайди тут -->
         </div>
       </div>
 
-      <div class="success-stories__nav" aria-label="Керування слайдером">
+      <nav class="success-stories__nav" aria-label="Керування слайдером">
         <div class="swiper-pagination__wrapper">
           <div
             class="swiper-pagination success-stories__pagination"
-            role="navigation"
             aria-label="Пагінація слайдера"
           ></div>
         </div>
@@ -693,38 +689,28 @@
             </svg>
           </button>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
 </section>
 
     <div class="backdrop" role="presentation" aria-hidden="true">
-  <div
-    class="modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-title"
-    aria-describedby="modal-desc"
-    tabindex="-1"
-  >
-    <button
-      type="button"
-      class="modal__close-btn js-close-btn"
-      aria-label="Закрити модальне вікно"
-    >
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc"
+    tabindex="-1">
+    <h2 id="modal-title" class="sr-only ">Модальне вікно</h2>
+    <p id="modal-desc" class="sr-only ">
+      Діалогове вікно. Натисніть Escape або кнопку “Закрити”, щоб вийти.
+    </p>
+    <button type="button" class="modal__close-btn js-close-btn" aria-label="Закрити модальне вікно">
       <svg class="modal__close-icon" width="14" height="14" aria-hidden="true" focusable="false">
         <use href="#icon-close"></use>
       </svg>
     </button>
 
     <div class="js-modal-content modal__content">
-      <!-- якщо всередині контенту є заголовок/опис — дай їм ці id -->
-      <!-- <h2 id="modal-title">...</h2> -->
-      <!-- <p id="modal-desc">...</p> -->
     </div>
   </div>
 </div>
-
     <div class="order-modal__backdrop" role="presentation" aria-hidden="true">
   <div
     class="order-modal"
@@ -742,10 +728,13 @@
     <h2 class="order-modal__title" id="order-modal-title">Залишіть заявку на знайомство</h2>
 
     <form class="order-modal__form" novalidate>
-      <label class="order-modal__label">
-        Ім’я*
+      <div class="field">
+        <label class="order-modal__label" for="name">
+          Ім’я*
+        </label>
         <input
           class="order-modal__input"
+          id="name"
           type="text"
           name="name"
           placeholder="Андрій"
@@ -755,12 +744,15 @@
           aria-describedby="nameMsg"
         />
         <p class="field__text" id="nameMsg" aria-live="polite"></p>
-      </label>
+      </div>
 
-      <label class="order-modal__label">
-        Телефон*
+      <div class="field">
+        <label class="order-modal__label" for="phone">
+          Телефон*
+        </label>
         <input
           class="order-modal__input"
+          id="phone"
           type="tel"
           name="phone"
           placeholder="+38 (095) 555 99 22"
@@ -771,12 +763,15 @@
           aria-describedby="phoneMsg"
         />
         <p class="field__text" id="phoneMsg" aria-live="polite"></p>
-      </label>
+      </div>
 
-      <label class="order-modal__label">
-        Коментар*
+      <div class="field">
+        <label class="order-modal__label" for="comment">
+          Коментар*
+        </label>
         <textarea
           class="order-modal__textarea"
+          id="comment"
           name="comment"
           rows="5"
           placeholder="Напишіть ваш коментар"
@@ -785,7 +780,7 @@
           aria-describedby="commentMsg"
         ></textarea>
         <p class="field__text" id="commentMsg" aria-live="polite"></p>
-      </label>
+      </div>
 
       <button class="send-form-btn" type="submit" disabled>
         Надіслати
