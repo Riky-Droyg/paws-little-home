@@ -1,10 +1,40 @@
-<section class="about-us-section" id="about-us">
+<section class="about-us-section" id="about-us" aria-labelledby="about-us-title">
   <div class="container about-container">
-    <h2 class="about-us-title">Чому Хатинка Лапок</h2>
+    <h2 class="about-us-title" id="about-us-title">Чому Хатинка Лапок</h2>
 
-    <div class="swiper about-swiper">
+    <!-- Інструкція для скрінрідера -->
+    <p class="sr-only" id="about-us-carousel-instructions">
+      Це карусель із історією притулку. Використовуйте Tab, щоб перейти до кнопок
+      “Попередній/Наступний слайд”, та Enter або Space, щоб перемикати слайди.
+    </p>
+
+    <!-- Статус для оголошення поточного слайду -->
+    <p
+      class="sr-only"
+      id="about-us-carousel-status"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      Слайд 1 з 5
+    </p>
+
+    <div
+      class="swiper about-swiper"
+      id="about-us-carousel"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Про нас: слайдер"
+      aria-describedby="about-us-carousel-instructions about-us-carousel-status"
+      tabindex="0"
+    >
       <div class="swiper-wrapper about-swiper-wrapper">
-        <div class="swiper-slide about-swiper-slide">
+        <div
+          class="swiper-slide about-swiper-slide"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="1 з 5"
+        >
           <picture>
             <source
               media="(min-width:1440px)"
@@ -24,6 +54,8 @@
               src="/img/about-us/webp/mobile/mobile-slide-1-min.webp"
               srcset="/img/about-us/webp/mobile/mobile-slide-1@2x-min.webp 2x"
               alt="Собака у притулку, Хатинка Лапок"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <p class="slide-text">
@@ -33,7 +65,12 @@
           </p>
         </div>
 
-        <div class="swiper-slide about-swiper-slide">
+        <div
+          class="swiper-slide about-swiper-slide"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="2 з 5"
+        >
           <picture>
             <source
               media="(min-width:1440px)"
@@ -53,6 +90,8 @@
               src="/img/about-us/webp/mobile/mobile-slide-2-min.webp"
               srcset="/img/about-us/webp/mobile/mobile-slide-2@2x-min.webp 2x"
               alt="Волонтери допомагають тваринам"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <p class="slide-text">
@@ -63,7 +102,12 @@
           </p>
         </div>
 
-        <div class="swiper-slide about-swiper-slide">
+        <div
+          class="swiper-slide about-swiper-slide"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="3 з 5"
+        >
           <picture>
             <source
               media="(min-width:1440px)"
@@ -83,6 +127,8 @@
               src="/img/about-us/webp/mobile/mobile-slide-3-min.webp"
               srcset="/img/about-us/webp/mobile/mobile-slide-3@2x-min.webp 2x"
               alt="Команда ветеринарів та волонтерів"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <p class="slide-text">
@@ -93,7 +139,12 @@
           </p>
         </div>
 
-        <div class="swiper-slide about-swiper-slide">
+        <div
+          class="swiper-slide about-swiper-slide"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="4 з 5"
+        >
           <picture>
             <source
               media="(min-width:1440px)"
@@ -113,6 +164,8 @@
               src="/img/about-us/webp/mobile/mobile-slide-4-min.webp"
               srcset="/img/about-us/webp/mobile/mobile-slide-4@2x-min.webp 2x"
               alt="Безпечний та комфортний простір для тварин"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <p class="slide-text">
@@ -122,7 +175,12 @@
           </p>
         </div>
 
-        <div class="swiper-slide about-swiper-slide">
+        <div
+          class="swiper-slide about-swiper-slide"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="5 з 5"
+        >
           <picture>
             <source
               media="(min-width:1440px)"
@@ -142,6 +200,8 @@
               src="/img/about-us/webp/mobile/mobile-slide-5-min.webp"
               srcset="/img/about-us/webp/mobile/mobile-slide-5@2x-min.webp 2x"
               alt="Допомога волонтерам та тваринам"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <p class="slide-text">
@@ -154,18 +214,44 @@
       </div>
     </div>
 
-    <div class="about-controls">
-      <div class="about-swiper-pagination"></div>
+    <div class="about-controls" role="group" aria-label="Керування слайдером">
+      <div
+        class="about-swiper-pagination"
+        role="navigation"
+        aria-label="Пагінація слайдера"
+      ></div>
 
       <div class="about-swiper-buttons">
-        <button class="about-swiper-button-prev" aria-label="Previous slide">
-          <svg class="arrow arrow-prev" width="24" height="24">
+        <button
+          type="button"
+          class="about-swiper-button-prev"
+          aria-label="Попередній слайд"
+          aria-controls="about-us-carousel"
+        >
+          <svg
+            class="arrow arrow-prev"
+            width="24"
+            height="24"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use href="#icon-arrow-left"></use>
           </svg>
         </button>
 
-        <button class="about-swiper-button-next" aria-label="Next slide">
-          <svg class="arrow arrow-next" width="24" height="24">
+        <button
+          type="button"
+          class="about-swiper-button-next"
+          aria-label="Наступний слайд"
+          aria-controls="about-us-carousel"
+        >
+          <svg
+            class="arrow arrow-next"
+            width="24"
+            height="24"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use href="#icon-arrow-right"></use>
           </svg>
         </button>
