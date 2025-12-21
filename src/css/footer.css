@@ -1,6 +1,9 @@
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
   padding: 48px 0;
-  margin: 0 auto;
   background-color: #c3b49d;
 }
 
@@ -8,9 +11,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #c3b49d;
 }
 
+/* Logo */
 .footer__logo {
   margin-bottom: 32px;
 }
@@ -20,18 +23,20 @@
   height: 129px;
 }
 
+/* Navigation */
 .footer__nav {
   margin-bottom: 32px;
 }
 
 .footer__nav-list {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
-.footer__nav-item {
+.footer__nav-item,
+.footer__nav-link {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: 12px;
@@ -40,11 +45,6 @@
 }
 
 .footer__nav-link {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #02060a;
   text-align: center;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
@@ -60,33 +60,32 @@
   text-decoration: underline;
 }
 
+/* Social */
 .footer__social-list {
   display: flex;
   gap: 24px;
   margin-bottom: 80px;
 }
 
+/* Copyright */
 .footer__copyright {
-  text-align: center;
   width: 100%;
+  padding-top: 32px;
+
+  border-top: 1px solid rgba(2, 6, 10, 0.15);
+
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 12px;
   line-height: 1.5;
+  text-align: center;
   color: #02060a;
-  padding-top: 32px;
-  border-top: 1px solid rgba(2, 6, 10, 0.15);
-
-
 }
 
+/* =========================
+   MEDIA
+========================= */
+
 @media screen and (min-width: 768px) {
-  .footer {
-    padding: 48px 0;
-  }
-
-
-
-
   .footer__nav-list {
     flex-direction: row;
     gap: 32px;
@@ -98,10 +97,8 @@
     padding: 64px 0;
   }
 
-  .footer__nav-link {
-    font-size: 14px;
-  }
-
+  .footer__nav-item,
+  .footer__nav-link,
   .footer__copyright {
     font-size: 14px;
   }

@@ -60,13 +60,26 @@ function slideTpl(item) {
   const scoreNum = Number(item?.rate);
   const score = Number.isFinite(scoreNum) ? scoreNum : 0;
 
-  return `<div class="swiper-slide success-stories__slide">
-    <div class="success-stories__wrapper">
-        <div class="js-rating" data-score="${score}"></div>
-        <p class="success-stories__slide-text">${text}</p>
-    </div>
-    <h3 class="success-stories__slide-title">${name}</h3>
-</div>`;
+  return `<div
+  class="swiper-slide success-stories__slide"
+  role="group"
+  aria-roledescription="slide"
+  aria-label="Історія: ${name}"
+>
+  <div class="success-stories__wrapper">
+    <div
+      class="js-rating"
+      data-score="${score}"
+      role="img"
+      aria-label="Оцінка: ${score} з 5"
+    ></div>
+
+    <p class="success-stories__slide-text">${text}</p>
+  </div>
+
+  <h3 class="success-stories__slide-title">${name}</h3>
+</div>
+`;
 }
 
 const ratingMap = new WeakMap();

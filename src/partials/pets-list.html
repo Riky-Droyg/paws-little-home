@@ -1,13 +1,39 @@
-<section class="pets-list" id="pets-list">
+<section class="pets-list" id="pets-list" aria-labelledby="pets-list-title" aria-describedby="pets-list-subtitle">
   <div class="container">
-    <h2 class="pets-list__title">Наші хвостики</h2>
-    <p class="pets-list__subtitle">Вони дуже чекають на знайомство з вами</p>
-    <ul class="pets-list__categories js-categories"></ul>
-     <span class="loader is-hidden"></span>
-    <ul class="pets-list__cards js-animals-list"></ul>
-    <button type="button" class="load-more-btn js-more-btn">
+    <h2 class="pets-list__title" id="pets-list-title">Наші хвостики</h2>
+    <p class="pets-list__subtitle" id="pets-list-subtitle">Вони дуже чекають на знайомство з вами</p>
+
+    <ul class="pets-list__categories js-categories" role="list" aria-label="Категорії тварин"></ul>
+
+    <span
+      class="loader is-hidden"
+      role="status"
+      aria-live="polite"
+      aria-label="Завантаження"
+      aria-hidden="true"
+    ></span>
+
+    <ul
+      class="pets-list__cards js-animals-list"
+      role="list"
+      aria-live="polite"
+      aria-busy="false"
+      aria-label="Список тварин"
+    ></ul>
+
+    <button
+      type="button"
+      class="load-more-btn js-more-btn"
+      aria-controls="pets-list"
+    >
       Показати більше
     </button>
-    <div id="tui-pagination-container" class="tui-pagination"></div>
+
+    <div
+      id="tui-pagination-container"
+      class="tui-pagination"
+      role="navigation"
+      aria-label="Пагінація списку тварин"
+    ></div>
   </div>
 </section>

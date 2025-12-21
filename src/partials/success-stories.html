@@ -1,63 +1,62 @@
-<section class="success-stories" id="stories">
-    <div class="success-stories__wrapper container">
-        <div class="success-stories__wrapper-head">
-            <h2 class="success-stories__header">Щасливі історії, що надихають</h2>
-            <p class="success-stories__subtitle">
-                Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
-            </p>
-        </div>
-
-
-
-
-        <div class="success-stories__container">
-
-
-            <div class="swiper success-stories__swiper">
-                <div class="swiper-wrapper success-stories__slides">
-
-
-                </div>
-            </div>
-
-
-
-
-            <div class="success-stories__nav">
-                <div class="swiper-pagination__wrapper">
-                    <div class="swiper-pagination success-stories__pagination"></div>
-                </div>
-
-
-                <div class="success-stories__nav-buttons">
-                    <button type="button" class="swiper-button-prev success-stories__btn success-stories__btn--prev">
-                        <svg class="success-stories__icon" width="24" height="24" aria-hidden="true">
-                            <use href="#icon-arrow-left"></use>
-                        </svg>
-                    </button>
-
-                    <button type="button" class="swiper-button-next success-stories__btn success-stories__btn--next">
-                        <svg class="success-stories__icon" width="24" height="24" aria-hidden="true">
-                            <use href="#icon-arrow-right"></use>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
+<section
+  class="success-stories"
+  id="stories"
+  aria-labelledby="stories-title"
+  aria-describedby="stories-desc"
+>
+  <div class="success-stories__wrapper container">
+    <div class="success-stories__wrapper-head">
+      <h2 class="success-stories__header" id="stories-title">Щасливі історії, що надихають</h2>
+      <p class="success-stories__subtitle" id="stories-desc">
+        Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
+      </p>
     </div>
+
+    <div class="success-stories__container">
+      <div
+        class="swiper success-stories__swiper"
+        role="region"
+        aria-label="Слайдер історій успіху"
+        aria-roledescription="carousel"
+      >
+        <div
+          class="swiper-wrapper success-stories__slides"
+          aria-live="polite"
+        >
+        </div>
+      </div>
+
+      <div class="success-stories__nav" aria-label="Керування слайдером">
+        <div class="swiper-pagination__wrapper">
+          <div
+            class="swiper-pagination success-stories__pagination"
+            role="navigation"
+            aria-label="Пагінація слайдера"
+          ></div>
+        </div>
+
+        <div class="success-stories__nav-buttons">
+          <button
+            type="button"
+            class="swiper-button-prev success-stories__btn success-stories__btn--prev"
+            aria-label="Попередній слайд"
+          >
+            <svg class="success-stories__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="#icon-arrow-left"></use>
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="swiper-button-next success-stories__btn success-stories__btn--next"
+            aria-label="Наступний слайд"
+          >
+            <svg class="success-stories__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- 
-<div class="swiper-slide success-stories__slide">
-    <div class="js-rating" data-score="${score}"></div>
-    <p class="success-stories__slide-text">${text}</p>
-    <h3 class="success-stories__slide-title">${name}</h3>
-  </div> -->
-
-
-<!-- <div class="swiper-slide success-stories__slide">
-    <div class="success-stories-slide__wrapper">
-        <div class="js-rating" data-score="${score}"></div>
-        <p class="success-stories__slide-text">${text}</p>
-    </div>
-    <h3 class="success-stories__slide-title">${name}</h3>
-</div> -->

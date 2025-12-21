@@ -330,19 +330,39 @@ function renderAnimals(animals) {
         .join('');
       return `
             <li class="pets-list__card">
-            <img class = "pets-list__card--image" src="${image}" alt="${name}" "lazy-loading">
-        <p class="pets-list__card--specie">${species}</p>
-        <h3 class="pets-list__card--name">${name}</h3>
-        <ul class="pets-list__card--categories-list">
-        ${categoriesMarkup}
-        </ul>
-        <div class = "pets-list__card--info">
-        <p class="pets-list__card--age">${age}</p>
-        <p class="pets-list__card--gender">${gender}</p>
-        </div>
-        <p class="pets-list__card--behavior">${behavior}</p>
-        <button type="button" class="pets-list__card--btn js-card-btn" data-id="${_id}">Дізнатись більше</button>
-        </li>`;
+  <img
+    class="pets-list__card--image"
+    src="${image}"
+    alt="Фото: ${name}"
+    loading="lazy"
+    decoding="async"
+  >
+
+  <p class="pets-list__card--specie">${species}</p>
+
+  <h3 class="pets-list__card--name">${name}</h3>
+
+  <ul class="pets-list__card--categories-list" role="list" aria-label="Категорії">
+    ${categoriesMarkup}
+  </ul>
+
+  <div class="pets-list__card--info" aria-label="Коротка інформація">
+    <p class="pets-list__card--age">${age}</p>
+    <p class="pets-list__card--gender">${gender}</p>
+  </div>
+
+  <p class="pets-list__card--behavior">${behavior}</p>
+
+  <button
+    type="button"
+    class="pets-list__card--btn js-card-btn"
+    data-id="${_id}"
+    aria-label="Дізнатись більше про ${name}"
+  >
+    Дізнатись більше
+  </button>
+</li>
+`;
     })
     .join('');
   return markup;

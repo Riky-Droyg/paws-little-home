@@ -3,6 +3,7 @@
     <a href="#top" class="header__link-logo">
       <img id="header-logo" src="/img/header/logo.webp" alt="Хатинка лапок">
     </a>
+
     <div class="header__desktop-container">
       <nav class="header__nav" aria-label="Головна навігація">
         <a class="link__default" href="#pets-list">Знайди друга</a>
@@ -14,15 +15,28 @@
       <a href="#pets-list" class="header__button button__black-default">Взяти друга</a>
     </div>
 
-    <button class="header__burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu"
-      type="button">
+    <button
+      class="header__burger"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-haspopup="dialog"
+      type="button"
+    >
       <span class="header__burger-lines" aria-hidden="true"></span>
     </button>
   </div>
 </header>
 
-
-<div class="modal-menu" id="mobile-menu">
+<div
+  class="modal-menu"
+  id="mobile-menu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Мобільне меню"
+  aria-hidden="true"
+  tabindex="-1"
+>
   <div class="modal-menu__container container">
     <nav class="modal-menu__nav" aria-label="Головна навігація">
       <a class="link__default" href="#pets-list">Знайди друга</a>
@@ -31,6 +45,6 @@
       <a class="link__default" href="#stories">Історії успіху</a>
     </nav>
 
-    <a href="#tails" class="modal-menu__button button__black-default">Взяти друга</a>
+    <a href="#pets-list" class="modal-menu__button button__black-default">Взяти друга</a>
   </div>
 </div>

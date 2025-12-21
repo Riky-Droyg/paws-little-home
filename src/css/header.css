@@ -1,24 +1,29 @@
-/* ========== Header ========== */
+/* =========================
+   HEADER
+========================= */
+
 .header {
-  font-size: 14px;
-  font-weight: 400;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #F6F4F1;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  background: #f6f4f1;
 }
 
 .header__blur {
+  border-bottom: 1px solid rgba(2, 6, 10, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(2, 6, 10, 0.10);
-
 }
 
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   min-height: 64px;
 }
 
@@ -26,26 +31,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 64px;
+
   max-width: 160px;
+  max-height: 64px;
 }
 
-/* Desktop container default */
+/* Desktop container (default hidden) */
 .header__desktop-container {
   display: none;
 }
 
-/* Burger button */
+/* =========================
+   BURGER BUTTON
+========================= */
+
 .header__burger {
-  width: 44px;
-  height: 44px;
   position: relative;
+
   display: inline-grid;
   place-items: center;
+
+  width: 44px;
+  height: 44px;
   padding: 0;
+
   border: 0;
   background: transparent;
   cursor: pointer;
+
   line-height: 0;
   -webkit-tap-highlight-color: transparent;
 }
@@ -54,12 +67,15 @@
 .header__burger-lines,
 .header__burger::before,
 .header__burger::after {
-  content: "";
+  content: '';
+  display: block;
+
   width: 24px;
   height: 2px;
-  display: block;
+
   border-radius: 2px;
   background: currentColor;
+
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
@@ -86,32 +102,38 @@
   transform: rotate(-45deg);
 }
 
-/* ========== Modal Menu ========== */
-.modal-menu {
-  font-size: 14px;
+/* =========================
+   MODAL MENU
+========================= */
 
+.modal-menu {
   position: fixed;
+  top: 64px;
   left: 0;
   right: 0;
-  top: 64px;
-  height: calc(100vh - 64px);
   z-index: 999;
+
+  height: calc(100vh - 64px);
+
+  font-size: 14px;
+
+  overflow: hidden;
+  background: #f6f4f1;
 
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-
-  overflow: hidden;
-  background: #F6F4F1;
 }
 
 .modal-menu__container {
   display: flex;
   flex-direction: column;
+
   height: 100%;
   padding-top: 40px;
 
   overflow-y: auto;
+
   transform: translateX(100%);
   transition: transform 0.3s ease;
   will-change: transform;
@@ -120,19 +142,21 @@
 .modal-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  margin-bottom: 64px;
   align-items: flex-start;
+  gap: 32px;
+
+  margin-bottom: 64px;
 }
-
-
 
 .modal-menu__button {
-  text-align: center;
   padding: 8px 0;
+  text-align: center;
 }
 
-/* Open state */
+/* =========================
+   STATES
+========================= */
+
 .modal-menu--open {
   opacity: 1;
   pointer-events: auto;
@@ -146,7 +170,10 @@
   overflow: hidden;
 }
 
-/* ========== Media ========== */
+/* =========================
+   MEDIA
+========================= */
+
 @media (min-width: 768px) {
   .header {
     font-size: 16px;
@@ -166,18 +193,17 @@
 }
 
 @media (min-width: 1440px) {
-
-
   .header__burger {
     display: none;
   }
 
   .header__desktop-container {
     display: flex;
-    width: 100%;
-    margin-left: 24px;
     align-items: center;
     justify-content: space-between;
+
+    width: 100%;
+    margin-left: 24px;
   }
 
   .header__nav {
