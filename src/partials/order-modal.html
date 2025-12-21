@@ -15,10 +15,13 @@
     <h2 class="order-modal__title" id="order-modal-title">Залишіть заявку на знайомство</h2>
 
     <form class="order-modal__form" novalidate>
-      <label class="order-modal__label">
-        Ім’я*
+      <div class="field">
+        <label class="order-modal__label" for="name">
+          Ім’я*
+        </label>
         <input
           class="order-modal__input"
+          id="name"
           type="text"
           name="name"
           placeholder="Андрій"
@@ -28,12 +31,15 @@
           aria-describedby="nameMsg"
         />
         <p class="field__text" id="nameMsg" aria-live="polite"></p>
-      </label>
+      </div>
 
-      <label class="order-modal__label">
-        Телефон*
+      <div class="field">
+        <label class="order-modal__label" for="phone">
+          Телефон*
+        </label>
         <input
           class="order-modal__input"
+          id="phone"
           type="tel"
           name="phone"
           placeholder="+38 (095) 555 99 22"
@@ -44,12 +50,15 @@
           aria-describedby="phoneMsg"
         />
         <p class="field__text" id="phoneMsg" aria-live="polite"></p>
-      </label>
+      </div>
 
-      <label class="order-modal__label">
-        Коментар*
+      <div class="field">
+        <label class="order-modal__label" for="comment">
+          Коментар*
+        </label>
         <textarea
           class="order-modal__textarea"
+          id="comment"
           name="comment"
           rows="5"
           placeholder="Напишіть ваш коментар"
@@ -58,7 +67,7 @@
           aria-describedby="commentMsg"
         ></textarea>
         <p class="field__text" id="commentMsg" aria-live="polite"></p>
-      </label>
+      </div>
 
       <button class="send-form-btn" type="submit" disabled>
         Надіслати

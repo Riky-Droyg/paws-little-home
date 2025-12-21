@@ -304,3 +304,8 @@ z-index: 999;
     font-size: 48px;
   }
 }
+
+
+.field {
+  width: 100%;
+}
