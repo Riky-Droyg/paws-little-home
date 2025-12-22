@@ -14,10 +14,7 @@
 
   <link rel="stylesheet" href="/css/critical-styles.css" />
 
-  <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
-
-
-
+  <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="/css/styles.css">
   </noscript>
@@ -25,8 +22,7 @@
 
 
   <link rel="preload" as="image" href="/img/hero/hero-mobile@2x.webp"
-    imagesrcset="/img/hero/hero-mobile@1x.webp 1x, /img/hero/hero-mobile@2x.webp 2x"
-    fetchpriority="high" />
+    imagesrcset="/img/hero/hero-mobile@1x.webp 1x, /img/hero/hero-mobile@2x.webp 2x" fetchpriority="high" />
 
 
 
