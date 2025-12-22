@@ -6,7 +6,7 @@
   overflow: visible;
   padding-top: 64px;
   padding-bottom: 64px;
-
+  min-height: 520px;
 }
 
 .about-container {
