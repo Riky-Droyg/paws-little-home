@@ -69,19 +69,23 @@ function createPaginationOptions(totalItems) {
     page: currentPage,
     centerAlign: true,
     template: {
-      page: '<button type="button" class="tui-page-btn">{{page}}</button>',
+      page: '<button type="button" class="tui-page-btn" aria-label="Сторінка {{page}}">{{page}}</button>',
+
       currentPage:
-        '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+        '<strong class="tui-page-btn tui-is-selected" aria-label="Поточна сторінка {{page}}">{{page}}</strong>',
+
       moveButton:
-        '<button type="button" class="tui-page-btn tui-{{type}}">' +
+        '<button type="button" class="tui-page-btn tui-{{type}}" aria-label="{{type}}">' +
         '<span class="tui-ico-{{type}}"></span>' +
         '</button>',
+
       disabledMoveButton:
-        '<button type="button" class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '<button type="button" class="tui-page-btn tui-is-disabled tui-{{type}}" aria-label="{{type}}" disabled>' +
+        '<span class="tui-ico-{{type}}"></span>' +
         '</button>',
+
       moreButton:
-        '<button type="button" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<button type="button" class="tui-page-btn tui-{{type}}-is-ellip" aria-label="Показати більше сторінок">' +
         '<span class="tui-ico-ellip">...</span>' +
         '</button>',
     },
