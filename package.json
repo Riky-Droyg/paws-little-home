@@ -16,7 +16,7 @@
     "vite": "^7.2.7",
     "vite-plugin-svg-icons": "^2.0.1"
   },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Oleksandr Blokha <riky.droyg@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
